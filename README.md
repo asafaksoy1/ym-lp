@@ -89,12 +89,22 @@ ad click, so you can attribute leads back to the exact ad.
 
 ---
 
-## 3. Deploying
+## 3. Deploying to Vercel
 
-Already live on Vercel. To redeploy after an edit:
+The project is zero-config: no build step, images are committed, `/api` is picked up
+automatically. From this folder:
 
 ```bash
 npx vercel --prod
+```
+
+The first run asks you to log in (it opens a browser) and to confirm the project name.
+Every later deploy is just the same command again.
+
+To regenerate the images from their originals (only needed if they are ever deleted):
+
+```bash
+npm install && npm run assets
 ```
 
 ## 4. Pushing to GitHub

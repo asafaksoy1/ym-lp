@@ -10,7 +10,7 @@
  *   - event photography: the client's shared Google Drive folder
  *   - logo: youngmaster.org
  *
- * Run manually with: npm run build
+ * Run manually with: npm run assets
  */
 
 import { mkdir, writeFile, access } from "node:fs/promises";

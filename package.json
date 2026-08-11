@@ -6,9 +6,9 @@
   "description": "Young Master Challenge — Meta Ads landing pages for Mexico (es-MX) and Brazil (pt-BR)",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "node scripts/build-assets.mjs"
+    "assets": "node scripts/build-assets.mjs"
   },
-  "dependencies": {
+  "devDependencies": {
     "sharp": "^0.33.5"
   }
 }
