@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Young Master Challenge — LATAM landing pages</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/img/logo-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --yellow:#ffde59; --ink:#0e0101; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; background:var(--ink); color:#fff;
+    font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    display:grid; place-items:center; padding:40px 20px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='96' viewBox='0 0 56 96'%3E%3Cpath d='M28 0l28 16v32L28 64 0 48V16z' fill='none' stroke='%23ffde59' stroke-opacity='.08' stroke-width='2'/%3E%3Cpath d='M28 64l28 16v32L28 128 0 112V80z' fill='none' stroke='%23ffde59' stroke-opacity='.08' stroke-width='2'/%3E%3C/svg%3E");
+  }
+  .box { max-width:720px; width:100%; text-align:center; }
+  img.logo { height:56px; width:auto; margin:0 auto 30px; }
+  h1 { font-size:clamp(26px,4.6vw,38px); font-weight:800; letter-spacing:-.02em; margin:0 0 12px; }
+  .sub { color:rgba(255,255,255,.65); font-size:16px; margin:0 0 38px; }
+  .grid { display:grid; gap:16px; }
+  @media (min-width:640px) { .grid { grid-template-columns:1fr 1fr; } }
+  a.card {
+    display:block; text-decoration:none; color:inherit;
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,222,89,.3);
+    border-radius:20px; padding:32px 26px;
+    transition:transform .18s ease, border-color .18s ease, background .18s ease;
+  }
+  a.card:hover { transform:translateY(-4px); border-color:var(--yellow); background:rgba(255,222,89,.1); }
+  .flag { font-size:44px; line-height:1; }
+  .country { font-size:22px; font-weight:800; margin-top:14px; }
+  .lang { font-size:13.5px; color:var(--yellow); font-weight:600; margin-top:6px; letter-spacing:.04em; }
+  .go { font-size:13px; color:rgba(255,255,255,.55); margin-top:16px; }
+  .foot { margin-top:38px; font-size:12.5px; color:rgba(255,255,255,.4); }
+</style>
+</head>
+<body>
+  <div class="box">
+    <img class="logo" src="/assets/img/logo-light.png" alt="Young Master Challenge">
+    <h1>Meta Ads landing pages</h1>
+    <p class="sub">Two conversion-focused landing pages, each written natively for its market.</p>
+
+    <div class="grid">
+      <a class="card" href="/mx/">
+        <div class="flag">🇲🇽</div>
+        <div class="country">México</div>
+        <div class="lang">ESPAÑOL (ES-MX)</div>
+        <div class="go">Ver la landing page →</div>
+      </a>
+      <a class="card" href="/br/">
+        <div class="flag">🇧🇷</div>
+        <div class="country">Brasil</div>
+        <div class="lang">PORTUGUÊS (PT-BR)</div>
+        <div class="go">Ver a landing page →</div>
+      </a>
+    </div>
+
+    <p class="foot">Young Master Challenge · International English &amp; Mathematics Competition</p>
+  </div>
+</body>
+</html>

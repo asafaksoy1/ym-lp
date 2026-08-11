@@ -1,0 +1,8 @@
+{
+  "name": "youngmaster-latam",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Young Master Challenge — Meta Ads landing pages for Mexico (es-MX) and Brazil (pt-BR)",
+  "license": "UNLICENSED"
+}

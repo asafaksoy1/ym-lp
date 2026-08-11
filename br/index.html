@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Young Master Challenge Brasil | Competição internacional de Inglês e Matemática</title>
+<meta name="description" content="Inscreva os alunos da sua escola no Young Master Challenge: competição internacional de Inglês e Matemática. A rodada online é feita dentro da própria escola, cada participante recebe certificado internacional e os melhores avançam para a Grande Final Mundial em Londres.">
+<link rel="canonical" href="https://youngmaster-latam.vercel.app/br/">
+<link rel="alternate" hreflang="pt-br" href="https://youngmaster-latam.vercel.app/br/">
+<link rel="alternate" hreflang="es-mx" href="https://youngmaster-latam.vercel.app/mx/">
+<meta name="robots" content="noindex, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Leve sua escola para a Final Mundial em Londres">
+<meta property="og:description" content="Competição internacional de Inglês e Matemática. A rodada online é feita dentro da própria escola e cada participante recebe um certificado internacional.">
+<meta property="og:image" content="https://youngmaster-latam.vercel.app/assets/img/hero-group.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/img/logo-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="/assets/img/corridor.webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+
+<!-- ===================================================================
+     META PIXEL — substitua PIXEL_ID_AQUI pelo ID do pixel da Young Master.
+     Enquanto não for substituído, a página funciona normalmente e não dispara nada.
+     =================================================================== -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+var YM_PIXEL_ID = 'PIXEL_ID_AQUI';
+if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('track', 'PageView'); }
+</script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-in">
+    <a href="#top"><img class="header-logo" src="/assets/img/logo-light.png" alt="Young Master Challenge" width="900" height="247"></a>
+    <div class="header-sp"></div>
+    <span class="header-note">Competição internacional · Inglês e Matemática</span>
+    <a class="btn btn-primary btn-sm" href="#form-card" data-cta="header">Inscrever minha escola</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO + FORM ============ -->
+<section class="hero" style="--hero-photo:url('/assets/img/corridor.webp')">
+  <div class="hero-in">
+
+    <div>
+      <span class="eyebrow">🐝 Competição internacional de Inglês e Matemática</span>
+      <h1>Leve sua escola para a <span class="hl">Final Mundial</span> em Londres</h1>
+      <p class="hero-sub">
+        O <strong>Young Master Challenge</strong> é uma competição internacional de Inglês e Matemática
+        para alunos de 8 a 18 anos. A rodada online é feita <strong>dentro da própria escola</strong>,
+        cada participante recebe um certificado internacional e os melhores avançam para a final
+        regional e para a Grande Final Mundial em Londres.
+      </p>
+
+      <ul class="hero-points">
+        <li><span class="tick">✓</span> <span>A rodada é online, feita na própria sala — sem viagens nem logística.</span></li>
+        <li><span class="tick">✓</span> <span>Todos os participantes recebem um <strong>certificado internacional</strong>.</span></li>
+        <li><span class="tick">✓</span> <span>Você inscreve a turma inteira; um coordenador acompanha todo o processo.</span></li>
+      </ul>
+
+      <div class="hero-proof">
+        <div><b>4.500+</b><span>Participantes online</span></div>
+        <div><b>200+</b><span>Países representados</span></div>
+        <div><b>8–18</b><span>Anos de idade</span></div>
+        <div><b>Londres</b><span>Grande Final Mundial</span></div>
+      </div>
+    </div>
+
+    <!-- ============ LEAD FORM ============ -->
+    <div class="form-card" id="form-card">
+      <div class="form-head">
+        <h2>Receba as informações para sua escola</h2>
+        <p>Enviamos pelo WhatsApp as datas, o conteúdo programático e o processo de inscrição. Sem compromisso.</p>
+      </div>
+
+      <div class="progress"><span class="on"></span><span></span></div>
+
+      <form id="lead-form" data-market="BR" novalidate>
+        <div class="form-body" id="form-steps">
+
+          <!-- step 1 -->
+          <div class="form-step">
+            <p class="step-label">Passo 1 de 2 · Seus dados</p>
+
+            <div class="field">
+              <label for="br-name">Nome completo</label>
+              <input id="br-name" name="nome" type="text" autocomplete="name" placeholder="Ex. Ana Oliveira" required>
+              <span class="msg"></span>
+            </div>
+
+            <div class="field">
+              <label for="br-phone">WhatsApp</label>
+              <div class="phone-group">
+                <span class="cc">🇧🇷 +55</span>
+                <input id="br-phone" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 91234-5678" data-phone="1" required>
+              </div>
+              <span class="msg"></span>
+            </div>
+
+            <div class="field">
+              <label for="br-email">E-mail</label>
+              <input id="br-email" name="email" type="email" autocomplete="email" placeholder="nome@escola.com.br" required>
+              <span class="msg"></span>
+            </div>
+
+            <button class="btn btn-primary btn-block" type="button" data-next>Continuar →</button>
+            <p class="form-foot">🔒 Seus dados são usados apenas para falar sobre a competição.</p>
+          </div>
+
+          <!-- step 2 -->
+          <div class="form-step" hidden>
+            <p class="step-label">Passo 2 de 2 · Sua escola</p>
+
+            <div class="field">
+              <label for="br-school">Escola ou colégio</label>
+              <input id="br-school" name="escola" type="text" placeholder="Nome da instituição" required>
+              <span class="msg"></span>
+            </div>
+
+            <div class="field">
+              <label for="br-city">Cidade e estado</label>
+              <input id="br-city" name="cidade" type="text" placeholder="Ex. Campinas, SP" required>
+              <span class="msg"></span>
+            </div>
+
+            <div class="field">
+              <label for="br-role">Seu cargo</label>
+              <select id="br-role" name="cargo" required>
+                <option value="">Selecione uma opção</option>
+                <option>Professor(a)</option>
+                <option>Coordenador(a) pedagógico(a)</option>
+                <option>Diretor(a)</option>
+                <option>Mantenedor(a) da instituição</option>
+                <option>Outro</option>
+              </select>
+              <span class="msg"></span>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="br-subject">Disciplina de interesse</label>
+                <select id="br-subject" name="disciplina" required>
+                  <option value="">Selecione</option>
+                  <option>Inglês</option>
+                  <option>Matemática</option>
+                  <option>As duas</option>
+                </select>
+                <span class="msg"></span>
+              </div>
+              <div class="field">
+                <label for="br-size">Alunos aprox.</label>
+                <select id="br-size" name="alunos" required>
+                  <option value="">Selecione</option>
+                  <option>1 – 20</option>
+                  <option>21 – 50</option>
+                  <option>51 – 100</option>
+                  <option>Mais de 100</option>
+                </select>
+                <span class="msg"></span>
+              </div>
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" name="consentimento" value="sim" required>
+              <span>Autorizo um coordenador do Young Master Challenge a entrar em contato por WhatsApp ou e-mail com as informações da competição.</span>
+            </label>
+
+            <button class="btn btn-primary btn-block" type="submit" data-submit>Enviar minha solicitação</button>
+            <button class="btn-back" type="button" data-back>← Voltar</button>
+          </div>
+
+        </div>
+
+        <!-- success -->
+        <div class="form-done" id="form-done" hidden>
+          <div class="big">✓</div>
+          <h3>Pronto! Recebemos sua solicitação</h3>
+          <p>Um coordenador do Young Master Challenge vai falar com você pelo <strong>WhatsApp</strong> com as datas,
+             o conteúdo programático e o processo de inscrição para a sua escola.</p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ STAT STRIP ============ -->
+<section class="stat-strip">
+  <div class="wrap">
+    <div><b>4.500+</b><span>Participantes na rodada online</span></div>
+    <div><b>200+</b><span>Países representados</span></div>
+    <div><b>3</b><span>Categorias por idade</span></div>
+    <div><b>2</b><span>Disciplinas: Inglês e Matemática</span></div>
+  </div>
+</section>
+
+<!-- ============ WHY SCHOOLS ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Para escolas e professores</p>
+      <h2>Por que as escolas inscrevem seus alunos</h2>
+      <p>Uma competição internacional organizada dentro da sua escola, sem complicação para você.</p>
+    </div>
+
+    <div class="cards c3 reveal">
+      <div class="card">
+        <div class="ic">🏫</div>
+        <h3>Prestígio internacional</h3>
+        <p>Sua escola participa de uma competição internacional de Inglês e Matemática ao lado de instituições de mais de 200 países.</p>
+      </div>
+      <div class="card">
+        <div class="ic">💻</div>
+        <h3>Sem logística</h3>
+        <p>A rodada é feita online, no próprio laboratório de informática. Basta ter computadores ou tablets com internet na data oficial.</p>
+      </div>
+      <div class="card">
+        <div class="ic">📜</div>
+        <h3>Certificado para cada aluno</h3>
+        <p>Todos os participantes recebem certificado. As melhores pontuações conquistam o reconhecimento Gold, Silver ou Bronze Master.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🚀</div>
+        <h3>Motivação de verdade</h3>
+        <p>Seus alunos estudam por algo com nome, data e um palco internacional. A preparação vira uma meta da turma inteira.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🌍</div>
+        <h3>Caminho até Londres</h3>
+        <p>Quem se destaca avança para as finais regionais e para a Grande Final Mundial em Londres, ao lado de jovens do mundo todo.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🎓</div>
+        <h3>Bolsas e descontos</h3>
+        <p>A competição concede bolsas, descontos, certificados e medalhas aos alunos com melhor desempenho.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section tint">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Como funciona</p>
+      <h2>Cinco passos, da sua sala até Londres</h2>
+      <p>Você cuida da inscrição da turma. Nós damos o conteúdo, a plataforma e o acompanhamento.</p>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Inscrição</h3>
+        <p>Você inscreve a escola e os alunos na categoria por idade e na disciplina escolhida.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>Preparação</h3>
+        <p>Você recebe os materiais e o conteúdo oficial de Inglês ou Matemática de cada categoria.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>Rodada online</h3>
+        <p>Seus alunos fazem a prova online na própria escola, na data oficial da rodada.</p>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <h3>Resultados</h3>
+        <p>Cada aluno recebe o certificado internacional de acordo com a pontuação obtida.</p>
+      </div>
+      <div class="step">
+        <div class="n">5</div>
+        <h3>Grande Final</h3>
+        <p>Os melhores avançam para a final regional e para a Grande Final Mundial em Londres.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Categorias</p>
+      <h2>Três categorias, dos 8 aos 18 anos</h2>
+      <p>Cada categoria tem seu próprio conteúdo e nível de dificuldade, em Inglês e em Matemática.</p>
+    </div>
+
+    <div class="cats reveal">
+      <div class="cat">
+        <div class="hex">🐝</div>
+        <h3>Little Bee</h3>
+        <p class="age">8 a 11 anos</p>
+        <p>Anos finais do fundamental I. Conteúdo adequado à idade, com foco em compreensão e raciocínio.</p>
+      </div>
+      <div class="cat">
+        <div class="hex deep">🐝</div>
+        <h3>Honeybee</h3>
+        <p class="age">12 a 15 anos</p>
+        <p>Fundamental II. Mais exigência em vocabulário, gramática e resolução de problemas matemáticos.</p>
+      </div>
+      <div class="cat">
+        <div class="hex ink">🐝</div>
+        <h3>Bumblebee</h3>
+        <p class="age">15 a 18 anos</p>
+        <p>Ensino médio. O nível mais alto da competição e o caminho mais direto para as bolsas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATES / PRIZES ============ -->
+<section class="section tint">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Certificados e prêmios</p>
+      <h2>Cada aluno leva um reconhecimento</h2>
+      <p>O certificado é concedido de acordo com a pontuação obtida na prova de conhecimentos.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table>
+        <thead>
+          <tr><th>Pontuação</th><th>Certificado</th><th>Benefício</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>90 – 100</td><td class="medal"><span class="dot gold"></span>Gold Master</td><td>£175 de desconto na Grande Final Mundial</td></tr>
+          <tr><td>75 – 89</td><td class="medal"><span class="dot silver"></span>Silver Master</td><td>£125 de desconto na Grande Final Mundial</td></tr>
+          <tr><td>60 – 74</td><td class="medal"><span class="dot bronze"></span>Bronze Master</td><td>£85 de desconto na Grande Final Mundial</td></tr>
+          <tr><td>40 – 59</td><td class="medal"><span class="dot hm"></span>Menção Honrosa</td><td>Certificado internacional de participação</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:14.5px;color:var(--muted);margin-top:16px;text-align:center;max-width:720px;margin-left:auto;margin-right:auto">
+      Além disso, as equipes vencedoras do <strong>Showdown Challenge</strong> nas rodadas locais e regionais
+      recebem prêmios adicionais, como o mascote oficial, fones de ouvido e power banks.
+    </p>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">A competição em imagens</p>
+      <h2>Como é viver o Young Master Challenge</h2>
+      <p>Rodadas locais, finais regionais e a Grande Final Mundial em Londres.</p>
+    </div>
+
+    <div class="gallery reveal">
+      <figure><img src="/assets/img/hero-group.webp" alt="Alunos do Young Master Challenge reunidos no dia da competição" loading="lazy" width="1500" height="844"></figure>
+      <figure><img src="/assets/img/mascot-solo.webp" alt="Participante com o mascote oficial da competição" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/assets/img/auditorium.webp" alt="Auditório lotado de participantes na final" loading="lazy" width="1200" height="675"></figure>
+      <figure><img src="/assets/img/exam-desk.webp" alt="Aluno fazendo a prova de conhecimentos" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/assets/img/winners.webp" alt="Vencedores do Young Master Challenge com o troféu" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/assets/img/certificates.webp" alt="Participantes comemorando com seus certificados" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/assets/img/merch-table.webp" alt="Participantes no dia da competição" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/assets/img/photo-frame.webp" alt="Participantes na área de fotos do evento" loading="lazy" width="1000" height="562"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LONDON FINAL ============ -->
+<section class="section dark honeycomb">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="kicker">Grande Final Mundial</p>
+      <h2>O palco final fica em Londres</h2>
+      <p>
+        Todos os anos, os jovens com melhor desempenho do mundo inteiro se reúnem em Londres para a Grande Final
+        do Young Master Challenge. Para muitos alunos é a primeira viagem internacional — e o momento
+        em que descobrem do que são capazes.
+      </p>
+      <ul>
+        <li><span class="tick">✓</span> <span>Prova final presencial em sede oficial</span></li>
+        <li><span class="tick">✓</span> <span>Cerimônia de premiação com medalhas e certificados</span></li>
+        <li><span class="tick">✓</span> <span>Programa cultural e de convivência em Londres</span></li>
+        <li><span class="tick">✓</span> <span>Convivência com estudantes de mais de 200 países</span></li>
+      </ul>
+      <p style="margin-top:26px">
+        <a class="btn btn-primary" href="#form-card" data-cta="london">Quero informações para minha escola</a>
+      </p>
+    </div>
+    <div class="reveal">
+      <img src="/assets/img/london-final.webp" alt="Participantes ao lado do anúncio da Grande Final Mundial em Londres" loading="lazy" width="1000" height="562">
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Depoimentos</p>
+      <h2>O que dizem os participantes</h2>
+    </div>
+
+    <div class="quotes reveal">
+      <div class="quote">
+        <div class="mark">"</div>
+        <p>Participar do Young Master Challenge foi uma das experiências mais gratificantes da minha vida acadêmica.
+           No começo eu estava nervosa por competir com estudantes de outros países, mas o desafio me levou a
+           descobrir forças que eu nem sabia que tinha.</p>
+        <div class="who">— Madi, participante</div>
+      </div>
+      <div class="quote">
+        <div class="mark">"</div>
+        <p>Participar do Young Master Challenge aumentou minha confiança e deixou o aprendizado empolgante.
+           Gostei muito de conhecer outros estudantes e explorar ideias novas.</p>
+        <div class="who">— Amara, participante</div>
+      </div>
+      <div class="quote">
+        <div class="mark">"</div>
+        <p>O Young Master Challenge é divertido e inspirador ao mesmo tempo. Torna o aprendizado empolgante e
+           desperta a curiosidade; me permitiu explorar ideias e experiências novas.</p>
+        <div class="who">— Georgiana, participante</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Perguntas frequentes</p>
+      <h2>O que os professores perguntam</h2>
+    </div>
+
+    <div class="faq reveal">
+      <details open>
+        <summary>Quais disciplinas minha turma pode fazer?</summary>
+        <p>Inglês e Matemática. Você pode inscrever seus alunos em uma disciplina ou nas duas, conforme a categoria correspondente à idade.</p>
+      </details>
+      <details>
+        <summary>Onde a rodada online é realizada?</summary>
+        <p>Na própria escola, na data oficial da rodada. Basta ter computadores ou tablets com acesso à internet. Não é preciso levar os alunos a nenhum outro local.</p>
+      </details>
+      <details>
+        <summary>Quantos alunos posso inscrever?</summary>
+        <p>Não há mínimo. Você pode inscrever uma turma, uma série inteira ou a escola toda. No formulário você indica quantos alunos considera e o coordenador orienta o restante.</p>
+      </details>
+      <details>
+        <summary>Quanto custa participar?</summary>
+        <p>Pedir as informações e cadastrar sua escola não tem custo. A taxa de participação por aluno depende da rodada e da categoria; um coordenador envia todos os detalhes pelo WhatsApp antes de qualquer decisão.</p>
+      </details>
+      <details>
+        <summary>É obrigatório viajar para Londres?</summary>
+        <p>Não. A rodada online e o certificado internacional são totalmente independentes da viagem. Participar da Grande Final Mundial é opcional e apenas para os alunos que se classificam.</p>
+      </details>
+      <details>
+        <summary>Quais são as datas da próxima rodada?</summary>
+        <p>As datas da próxima temporada são confirmadas de forma personalizada. Deixe seus dados e o coordenador envia o calendário oficial e o conteúdo pelo WhatsApp.</p>
+      </details>
+      <details>
+        <summary>O que eu recebo como professor(a)?</summary>
+        <p>O reconhecimento da sua escola como instituição participante, os materiais oficiais de preparação e o acompanhamento de um coordenador durante todo o processo.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta-final">
+  <div class="wrap">
+    <h2>Inscreva sua escola no Young Master Challenge</h2>
+    <p>Deixe seus dados e um coordenador entra em contato pelo WhatsApp com as datas, o conteúdo e todo o processo de inscrição.</p>
+    <a class="btn btn-primary btn-lg" href="#form-card" data-cta="final">Quero as informações 🐝</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <img src="/assets/img/logo-light.png" alt="Young Master Challenge" width="900" height="247">
+      <p>Competição internacional de Inglês e Matemática para alunos de 8 a 18 anos, com rodadas online, locais e regionais, e uma Grande Final Mundial em Londres.</p>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <ul>
+        <li>16-17 Grand Arcade, Londres, N12 0EH</li>
+        <li><a href="https://wa.me/447393909302">WhatsApp: +44 7393 909302</a></li>
+        <li><a href="mailto:info@youngmaster.org">info@youngmaster.org</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <ul>
+        <li><a href="https://www.youngmaster.org/" target="_blank" rel="noopener">Site oficial</a></li>
+        <li><a href="https://www.youngmaster.org/privacy-notice/" target="_blank" rel="noopener">Aviso de privacidade</a></li>
+        <li><a href="/mx/">Versión en español (México)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© Young Master Challenge. Todos os direitos reservados.</span>
+    <span>Página oficial de inscrição para o Brasil</span>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a class="btn btn-primary btn-block" href="#form-card" data-cta="sticky">Inscrever minha escola 🐝</a>
+</div>
+
+<a class="wa" href="https://wa.me/447393909302?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20do%20Young%20Master%20Challenge%20para%20a%20minha%20escola%20no%20Brasil" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+</a>
+
+<script>
+window.YM_I18N = {
+  required: "Este campo é obrigatório",
+  email: "Digite um e-mail válido",
+  phone: "Digite um número de WhatsApp válido",
+  sending: "Enviando…"
+};
+</script>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>
