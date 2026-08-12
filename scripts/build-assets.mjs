@@ -16,7 +16,13 @@
 import { mkdir, writeFile, access } from "node:fs/promises";
 import { constants } from "node:fs";
 import path from "node:path";
-import sharp from "sharp";
+let sharp;
+try {
+  sharp = (await import("sharp")).default;
+} catch {
+  console.error("This script needs sharp. Run:  npm i sharp   then:  npm run assets");
+  process.exit(1);
+}
 
 const OUT = path.join(process.cwd(), "assets", "img");
 
