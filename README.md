@@ -119,6 +119,27 @@ git push -u origin main
 
 ---
 
+## Tone and register
+
+The two pages address the reader differently on purpose, because the polite default differs by
+market:
+
+| Page | Form of address | Why |
+| --- | --- | --- |
+| `/mx` | **usted** (formal) | The reader is a teacher, academic coordinator or school director being approached with a business proposal. `tú` reads as friendly-informal and undercuts the pitch. |
+| `/br` | **você** | In Brazilian Portuguese `você` *is* the neutral professional register. `o(a) senhor(a)` would sound stiff and distant. |
+
+Keep `usted` if these pages are ever reused for other Spanish-speaking markets. It is the one form
+that is correct everywhere in Latin America — Argentina, Uruguay and much of Central America use
+`vos` rather than `tú`, so an informal page would have to be rewritten per country, while a formal
+one does not.
+
+Where a direct-object pronoun would have been gendered (`contactarlo` / `contactarla`), the copy
+is phrased neutrally instead (`comunicarnos con usted`). Most teachers in the target audience are
+women, so the masculine default would have been wrong more often than right.
+
+---
+
 ## Facts used on the pages
 
 Everything factual is taken from youngmaster.org — nothing was invented:
