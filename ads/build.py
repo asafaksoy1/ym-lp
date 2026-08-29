@@ -26,21 +26,15 @@ REPO = os.path.dirname(ROOT)
 OUT = os.path.join(ROOT, "creatives")
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
-PHOTOS = {
-    "group": "hero-group.webp",
-    "mascot": "mascot-group.webp",
-    "auditorium": "auditorium.webp",
-    "winners": "winners.webp",
-    "exam": "exam-desk.webp",
-    "london": "london-final.webp",
-    "certificates": "certificates.webp",
-    "corridor": "corridor.webp",
-}
+# Ad photos are kept separately from the site images at full resolution: the site
+# images are compressed hard for load speed, which is wrong for a 1080px creative.
+PHOTOS = {k: k + ".jpg" for k in
+          ("group", "mascot", "auditorium", "winners", "exam", "london", "certificates", "corridor")}
 
 
 def data_uri(path):
     ext = path.rsplit(".", 1)[1].lower()
-    mime = {"webp": "image/webp", "png": "image/png"}[ext]
+    mime = {"webp": "image/webp", "png": "image/png", "jpg": "image/jpeg"}[ext]
     with open(path, "rb") as fh:
         return "data:%s;base64,%s" % (mime, base64.b64encode(fh.read()).decode())
 
@@ -59,7 +53,6 @@ def body_block(c):
       <h1>{esc(c['headline'])}</h1>
       <p class="sub">{esc(c['subhead'])}</p>
       <div class="proof"><span class="tick">✓</span>{esc(c['proof'])}</div>
-      <div><span class="cta">{esc(c['cta'])}</span></div>
     """
 
 
@@ -110,7 +103,7 @@ def main():
     made = []
     for c in creatives:
         photo_file = PHOTOS.get(c.get("photo", "group"), PHOTOS["group"])
-        photo = data_uri(os.path.join(REPO, "assets", "img", photo_file))
+        photo = data_uri(os.path.join(ROOT, "photos", photo_file))
         page, n = re.subn(r'<div class="card" id="card">.*?</div>',
                           lambda _m: card_html(c, photo, logo), template, count=1, flags=re.S)
         if n != 1:
