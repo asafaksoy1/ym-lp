@@ -669,3 +669,73 @@ body.has-mobile-cta { padding-bottom: 76px; }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+/* ---------------- Calendar section (2026/27 dates) ---------------- */
+
+.cal-grid { display: grid; gap: 22px; align-items: start; }
+@media (min-width: 940px) { .cal-grid { grid-template-columns: 1.15fr .85fr; gap: 26px; } }
+
+/* the round that is next up */
+tbody tr.hot td { background: var(--yellow-soft); font-weight: 700; }
+tbody tr.hot td:first-child { box-shadow: inset 4px 0 0 var(--yellow-deep); }
+.tag-next {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--yellow);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 2px 7px;
+  margin-left: 9px;
+  vertical-align: 1px;
+}
+
+.road {
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  box-shadow: var(--shadow);
+}
+.road h3 { font-size: 19px; color: var(--yellow); margin-bottom: 4px; }
+.road .road-sub { font-size: 13.5px; color: rgba(255, 255, 255, .6); margin-bottom: 18px; }
+.road ol { list-style: none; margin: 0; padding: 0; counter-reset: r; }
+.road li {
+  position: relative;
+  padding: 0 0 20px 30px;
+  border-left: 2px solid rgba(255, 222, 89, .3);
+  margin-left: 7px;
+}
+.road li:last-child { border-left-color: transparent; padding-bottom: 0; }
+.road li::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 3px solid var(--yellow-deep);
+}
+.road li.final::before { background: var(--yellow); border-color: var(--yellow); }
+.road .ev { font-size: 15.5px; font-weight: 700; line-height: 1.25; }
+.road .dt { font-size: 13.5px; color: rgba(255, 255, 255, .68); margin-top: 3px; }
+.road li.final .ev { color: var(--yellow); font-size: 17px; }
+
+/* "next round" chip under the form heading */
+.form-head .next {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 11px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 6px 13px;
+}
+.form-head .next b { color: var(--yellow); font-weight: 800; }
