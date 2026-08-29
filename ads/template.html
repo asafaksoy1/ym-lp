@@ -1,0 +1,149 @@
+<meta charset="utf-8">
+<title>YM creative</title>
+<style>
+@import url("_fonts.css");
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --yellow: #ffde59;
+  --yellow-deep: #fdc500;
+  --ink: #0e0101;
+}
+
+html, body { width: 1080px; height: 1350px; overflow: hidden; }
+body {
+  font-family: "Poppins", system-ui, sans-serif;
+  background: var(--ink);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card { position: relative; width: 1080px; height: 1350px; overflow: hidden; }
+
+/* photo layer */
+.photo {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center 28%;
+}
+
+/* honeycomb texture */
+.mesh {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='144' viewBox='0 0 56 96'%3E%3Cpath d='M28 0l28 16v32L28 64 0 48V16z' fill='none' stroke='%23ffde59' stroke-opacity='.13' stroke-width='2'/%3E%3Cpath d='M28 64l28 16v32L28 128 0 112V80z' fill='none' stroke='%23ffde59' stroke-opacity='.13' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+/* ---------- brand bar ---------- */
+.topbar {
+  position: absolute; top: 0; left: 0; right: 0;
+  display: flex; align-items: center; gap: 20px;
+  padding: 44px 56px 0;
+  z-index: 5;
+}
+.topbar img { height: 62px; width: auto; }
+.rule { flex: 1; height: 3px; background: rgba(255,222,89,.4); border-radius: 2px; }
+
+/* bottom accent */
+.accent {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 14px;
+  background: linear-gradient(90deg, var(--yellow) 0%, var(--yellow-deep) 100%);
+  z-index: 6;
+}
+
+/* ---------- shared type ---------- */
+.badge {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--ink);
+  font-size: 25px; font-weight: 800;
+  letter-spacing: .04em; text-transform: uppercase;
+  padding: 13px 26px; border-radius: 999px;
+  margin-bottom: 26px;
+}
+h1 {
+  font-size: 92px; font-weight: 900; line-height: .98;
+  letter-spacing: -.035em; text-wrap: balance;
+}
+h1 em { font-style: normal; color: var(--yellow); }
+.sub {
+  font-size: 33px; font-weight: 500; line-height: 1.3;
+  margin-top: 22px; max-width: 21ch;
+}
+.proof {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-size: 26px; font-weight: 700;
+  margin-top: 28px; padding: 14px 26px;
+  border: 2px solid rgba(255,222,89,.55); border-radius: 999px;
+}
+.proof .tick {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--yellow); color: var(--ink);
+  display: grid; place-items: center; font-size: 18px; font-weight: 900;
+}
+.cta {
+  display: inline-block;
+  background: var(--yellow); color: var(--ink);
+  font-size: 34px; font-weight: 900; letter-spacing: -.01em;
+  padding: 24px 44px; border-radius: 999px;
+  margin-top: 34px;
+  box-shadow: 0 10px 0 var(--yellow-deep);
+}
+
+/* =========================================================
+   VARIANT A — photo with a heavy bottom gradient, text low
+   ========================================================= */
+.v-a .photo { filter: saturate(1.05); }
+.v-a .shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(14,1,1,.86) 0%, rgba(14,1,1,.3) 34%, rgba(14,1,1,.62) 62%, rgba(14,1,1,.96) 100%);
+}
+.v-a .body {
+  position: absolute; left: 56px; right: 56px; bottom: 86px; z-index: 4;
+}
+.v-a h1 { font-size: 88px; }
+
+/* =========================================================
+   VARIANT B — photo on top, solid yellow panel beneath
+   ========================================================= */
+.v-b .photo { height: 560px; bottom: auto; }
+.v-b .photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(14,1,1,.62) 0%, rgba(14,1,1,.12) 45%, rgba(14,1,1,.35) 100%);
+}
+.v-b .panel {
+  position: absolute; left: 0; right: 0; top: 560px; bottom: 0;
+  background: var(--yellow); color: var(--ink);
+  padding: 54px 56px 62px;
+  z-index: 4;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.v-b .badge { background: var(--ink); color: var(--yellow); }
+.v-b h1 { font-size: 74px; color: var(--ink); }
+.v-b h1 em { color: #8a5b00; }
+.v-b .sub { color: rgba(14,1,1,.78); max-width: 24ch; font-weight: 600; }
+.v-b .proof { border-color: rgba(14,1,1,.28); color: var(--ink); }
+.v-b .proof .tick { background: var(--ink); color: var(--yellow); }
+.v-b .cta { background: var(--ink); color: var(--yellow); box-shadow: 0 10px 0 rgba(0,0,0,.45); }
+
+/* =========================================================
+   VARIANT C — dark editorial, framed photo, type-led
+   ========================================================= */
+.v-c { background: var(--ink); }
+.v-c .frame {
+  position: absolute; left: 56px; right: 56px; top: 150px;
+  height: 430px; border-radius: 28px; overflow: hidden;
+  border: 5px solid var(--yellow);
+}
+.v-c .frame .photo { position: absolute; inset: 0; }
+.v-c .body {
+  position: absolute; left: 56px; right: 56px; bottom: 84px; z-index: 4;
+}
+.v-c h1 { font-size: 78px; }
+.v-c .sub { max-width: 22ch; color: rgba(255,255,255,.82); }
+</style>
+
+<div class="card" id="card">
+  <!-- filled by build.py -->
+</div>
