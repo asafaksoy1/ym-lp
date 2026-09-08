@@ -2,4 +2,8 @@ node_modules
 scripts
 push-to-github.sh
 README.md
-ads
+ads/photos
+ads/build.py
+ads/template.html
+ads/_fonts.css
+ads/README.md

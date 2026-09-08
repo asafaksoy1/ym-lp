@@ -25,8 +25,9 @@
 <link rel="stylesheet" href="/assets/css/site.css">
 
 <!-- ===================================================================
-     META PIXEL — replace PIXEL_ID_AQUI with the Young Master pixel ID.
-     Until it is replaced the page runs normally and simply fires nothing.
+     META PIXEL — Young Master dataset 1876285623353605.
+     site.js fires PageView, ScrollDepth, FormStarted, FormStep2, CTAClick
+     and, on a successful submit, Lead + CompleteRegistration.
      =================================================================== -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -34,7 +35,7 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
-var YM_PIXEL_ID = 'PIXEL_ID_AQUI';
+var YM_PIXEL_ID = '1876285623353605';
 if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('track', 'PageView'); }
 </script>
 </head>
