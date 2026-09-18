@@ -46,7 +46,11 @@ body {
   overflow-x: hidden;
 }
 
-img { max-width: 100%; display: block; }
+/* height:auto is load-bearing. Every <img> carries width/height attributes so the
+   browser can reserve space, but with a CSS width and no CSS height those
+   attributes are applied as a fixed presentational height, which stretches the
+   picture. .gallery img and .header-logo override this on purpose. */
+img { max-width: 100%; height: auto; display: block; }
 
 h1, h2, h3, h4 { margin: 0; line-height: 1.12; letter-spacing: -.02em; font-weight: 800; }
 p { margin: 0; }
