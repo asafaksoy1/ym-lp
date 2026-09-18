@@ -26,7 +26,7 @@ try {
 
 const OUT = path.join(process.cwd(), "assets", "img");
 
-// name -> [Google Drive file id, output width]
+// name -> [Google Drive file id, output width, webp quality (optional, default 76)]
 const PHOTOS = {
   "hero-group":   ["1joSwK5fsd6Bf8FWK-Eb5ToXTwVaKyjYP", 1500],
   "auditorium":   ["1kIFCxa0lqLtTk8r_FJM-Kz7VCLoOeqb8", 1200],
@@ -37,7 +37,9 @@ const PHOTOS = {
   "photo-frame":  ["1Tm4DCthY_Pan7-KfPMCQ544F2cD8Qrjx", 1000],
   "mascot-group": ["1MZ6sSuFeODRQQT7ITZ0uVKH3YboitQv0", 1000],
   "mascot-solo":  ["1d5W4lYCevzOylwUX8LN5-8SuD0TtIOkL", 1000],
-  "london-final": ["1Pq6aqWWGaUDMevUAmePBqZIvR3XUyNvV", 1000],
+  // Full width and a higher quality: this is the photo behind the London prize
+  // claim, and the banner lettering in it turns to mush at 1000px / q76.
+  "london-final": ["1Pq6aqWWGaUDMevUAmePBqZIvR3XUyNvV", 1600, 88],
   "certificates": ["11Y9QmIkAneOX4hhItgcHDWCtKq5U93nT", 1000],
   "lecture":      ["1MHzfdJMOfICbNuV5fEywak1HWNAxwK37", 1000]
 };
@@ -54,12 +56,12 @@ async function download(url) {
   return Buffer.from(await res.arrayBuffer());
 }
 
-async function buildPhoto(name, id, width) {
+async function buildPhoto(name, id, width, quality = 76) {
   const out = path.join(OUT, `${name}.webp`);
   if (await exists(out)) return "present";
   const src = await download(`https://drive.google.com/thumbnail?id=${id}&sz=w1600`);
   await sharp(src).resize({ width, withoutEnlargement: true })
-    .webp({ quality: 76, effort: 6 }).toFile(out);
+    .webp({ quality, effort: 6 }).toFile(out);
   return "built";
 }
 
@@ -88,8 +90,8 @@ async function buildLogos() {
 await mkdir(OUT, { recursive: true });
 
 const results = await Promise.all(
-  Object.entries(PHOTOS).map(async ([name, [id, width]]) => {
-    const state = await buildPhoto(name, id, width);
+  Object.entries(PHOTOS).map(async ([name, [id, width, quality]]) => {
+    const state = await buildPhoto(name, id, width, quality);
     return `${name}: ${state}`;
   })
 );
