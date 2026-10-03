@@ -46,11 +46,7 @@ body {
   overflow-x: hidden;
 }
 
-/* height:auto is load-bearing. Every <img> carries width/height attributes so the
-   browser can reserve space, but with a CSS width and no CSS height those
-   attributes are applied as a fixed presentational height, which stretches the
-   picture. .gallery img and .header-logo override this on purpose. */
-img { max-width: 100%; height: auto; display: block; }
+img { max-width: 100%; display: block; }
 
 h1, h2, h3, h4 { margin: 0; line-height: 1.12; letter-spacing: -.02em; font-weight: 800; }
 p { margin: 0; }
@@ -521,6 +517,36 @@ a { color: inherit; }
 .cat .age { font-size: 15px; font-weight: 700; color: var(--yellow-deep); margin-top: 5px; }
 .cat p { font-size: 14.5px; color: var(--muted); margin-top: 11px; }
 
+/* Mexico calendar */
+.mx-calendar-grid { display: grid; gap: 22px; align-items: start; }
+@media (min-width: 940px) {
+  .mx-calendar-grid { grid-template-columns: 1.15fr .85fr; gap: 26px; }
+}
+.mx-calendar-table { min-width: 0; table-layout: fixed; }
+.mx-calendar-table th, .mx-calendar-table td { padding: 15px 18px; text-align: left; border-bottom: 1px solid var(--line-soft); }
+.mx-calendar-table tbody th { font-weight: 400; }
+.mx-calendar-table tbody tr:last-child > * { border-bottom: 0; }
+.mx-calendar-table .mx-calendar-next > * { background: var(--yellow-soft); font-weight: 700; }
+.mx-calendar-next th { box-shadow: inset 4px 0 var(--yellow-deep); }
+.mx-calendar-badge { display: inline-block; margin-left: 8px; padding: 2px 7px; border-radius: 5px; background: var(--ink); color: var(--yellow); font-size: 11px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; vertical-align: middle; }
+.mx-calendar-path { padding: 26px 24px; border-radius: var(--radius); background: var(--ink); color: #fff; box-shadow: var(--shadow); }
+.mx-calendar-path h3 { color: var(--yellow); font-size: 19px; margin-bottom: 4px; }
+.mx-calendar-path p { color: rgba(255, 255, 255, .68); font-size: 13.5px; }
+.mx-calendar-path > p { color: rgba(255, 255, 255, .6); }
+.mx-calendar-timeline { list-style: none; margin: 18px 0 0; padding: 0; }
+.mx-calendar-timeline li { position: relative; padding: 0 0 20px 30px; border-left: 2px solid rgba(255, 222, 89, .3); margin-left: 7px; }
+.mx-calendar-timeline li::before { content: ""; position: absolute; left: -8px; top: 4px; width: 14px; height: 14px; border: 3px solid var(--yellow-deep); border-radius: 50%; background: var(--ink); }
+.mx-calendar-timeline li:last-child { padding-bottom: 0; border-left-color: transparent; }
+.mx-calendar-timeline li:last-child::before { background: var(--yellow); border-color: var(--yellow); }
+.mx-calendar-timeline h4 { font-size: 15.5px; font-weight: 700; line-height: 1.25; margin-bottom: 3px; }
+.mx-calendar-timeline li:last-child h4 { color: var(--yellow); font-size: 17px; }
+@media (max-width: 559px) {
+  .mx-calendar-table th, .mx-calendar-table td { padding: 14px 12px; font-size: 13px; }
+  .mx-calendar-table thead th { font-size: 11px; }
+  .mx-calendar-badge { margin: 5px 0 0; }
+  .mx-calendar-path { padding: 24px 20px; }
+}
+
 /* prizes table */
 .table-wrap { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid var(--line); background: #fff; }
 table { border-collapse: collapse; width: 100%; min-width: 520px; }
@@ -561,7 +587,7 @@ td .dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; 
 /* split section (London final) */
 .split { display: grid; gap: 34px; align-items: center; }
 @media (min-width: 940px) { .split { grid-template-columns: 1.05fr .95fr; gap: 52px; } }
-.split img { border-radius: var(--radius-lg); box-shadow: var(--shadow); width: 100%; }
+.split img { border-radius: var(--radius-lg); box-shadow: var(--shadow); width: 100%; height: auto; }
 .split h2 { font-size: clamp(26px, 4vw, 37px); }
 .split p { font-size: 16.5px; color: var(--muted); margin-top: 16px; }
 .section.dark .split p { color: rgba(255, 255, 255, .76); }
@@ -674,72 +700,23 @@ body.has-mobile-cta { padding-bottom: 76px; }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
 
-/* ---------------- Calendar section (2026/27 dates) ---------------- */
-
-.cal-grid { display: grid; gap: 22px; align-items: start; }
-@media (min-width: 940px) { .cal-grid { grid-template-columns: 1.15fr .85fr; gap: 26px; } }
-
-/* the round that is next up */
-tbody tr.hot td { background: var(--yellow-soft); font-weight: 700; }
-tbody tr.hot td:first-child { box-shadow: inset 4px 0 0 var(--yellow-deep); }
-.tag-next {
-  display: inline-block;
-  background: var(--ink);
-  color: var(--yellow);
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  border-radius: 5px;
-  padding: 2px 7px;
-  margin-left: 9px;
-  vertical-align: 1px;
+/* Show the badge icon on the left; reveal its text on hover or keyboard focus. */
+.grecaptcha-badge {
+  left: 0 !important;
+  right: auto !important;
+  bottom: 86px !important;
+  width: 70px !important;
+  overflow: hidden;
+  transition: width .3s ease !important;
+  z-index: 65;
 }
-
-.road {
-  background: var(--ink);
-  color: #fff;
-  border-radius: var(--radius);
-  padding: 26px 24px;
-  box-shadow: var(--shadow);
+.grecaptcha-badge:hover,
+.grecaptcha-badge:focus-within {
+  width: 256px !important;
 }
-.road h3 { font-size: 19px; color: var(--yellow); margin-bottom: 4px; }
-.road .road-sub { font-size: 13.5px; color: rgba(255, 255, 255, .6); margin-bottom: 18px; }
-.road ol { list-style: none; margin: 0; padding: 0; counter-reset: r; }
-.road li {
-  position: relative;
-  padding: 0 0 20px 30px;
-  border-left: 2px solid rgba(255, 222, 89, .3);
-  margin-left: 7px;
+@media (prefers-reduced-motion: reduce) {
+  .grecaptcha-badge { transition: none !important; }
 }
-.road li:last-child { border-left-color: transparent; padding-bottom: 0; }
-.road li::before {
-  content: "";
-  position: absolute;
-  left: -8px;
-  top: 4px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--ink);
-  border: 3px solid var(--yellow-deep);
+@media (min-width: 980px) {
+  .grecaptcha-badge { bottom: 14px !important; }
 }
-.road li.final::before { background: var(--yellow); border-color: var(--yellow); }
-.road .ev { font-size: 15.5px; font-weight: 700; line-height: 1.25; }
-.road .dt { font-size: 13.5px; color: rgba(255, 255, 255, .68); margin-top: 3px; }
-.road li.final .ev { color: var(--yellow); font-size: 17px; }
-
-/* "next round" chip under the form heading */
-.form-head .next {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin-top: 11px;
-  background: var(--ink);
-  color: #fff;
-  font-size: 12.5px;
-  font-weight: 700;
-  border-radius: 999px;
-  padding: 6px 13px;
-}
-.form-head .next b { color: var(--yellow); font-weight: 800; }

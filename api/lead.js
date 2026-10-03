@@ -1,5 +1,6 @@
 /**
- * POST /api/lead — lead capture for the Mexico and Brazil landing pages.
+ * POST /api/lead — lead capture for the Mexico, Brazil, UAE, Saudi and Qatar
+ * landing pages.
  *
  * CURRENT MODE: demo. Every submission is validated and written to the Vercel
  * function logs (Vercel dashboard -> the project -> Logs), and nothing else.
@@ -16,14 +17,15 @@
  */
 
 const FIELDS = [
-  "nombre", "nome",                 // name (MX / BR)
+  "nombre", "nome", "name",         // name (MX / BR / AE-SA-QA)
   "whatsapp", "email",
-  "escuela", "escola",              // school (MX / BR)
-  "ciudad", "cidade",               // city (MX / BR)
-  "cargo",
-  "materia", "disciplina",          // subject (MX / BR)
-  "alumnos", "alunos",              // student count (MX / BR)
-  "consentimiento", "consentimento",
+  "english_proficiency",
+  "escuela", "escola", "school",    // school (MX / BR / AE-SA-QA)
+  "ciudad", "cidade", "city",       // city (MX / BR / AE-SA-QA)
+  "cargo", "role",                  // role (MX-BR / AE-SA-QA)
+  "materia", "disciplina", "subject",   // subject (MX / BR / AE-SA-QA)
+  "alumnos", "alunos", "students",      // student count (MX / BR / AE-SA-QA)
+  "consentimiento", "consentimento", "consent",
   "locale", "market", "page", "referrer",
   "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid"
 ];
@@ -54,7 +56,7 @@ export default async function handler(req, res) {
     if (value) lead[key] = value;
   }
 
-  const name = lead.nombre || lead.nome || "";
+  const name = lead.nombre || lead.nome || lead.name || "";
   const contact = lead.whatsapp || lead.email || "";
   if (!name || !contact) {
     return res.status(400).json({ ok: false, error: "missing_required_fields" });

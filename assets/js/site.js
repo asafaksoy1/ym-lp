@@ -149,9 +149,14 @@
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    if (!validateStep(current)) return;
+    for (var i = 0; i < steps.length; i++) {
+      if (!validateStep(i)) { showStep(i); validateStep(i); return; }
+    }
 
     var btn = form.querySelector("[data-submit]");
+    if (btn.disabled) return;
+    var error = document.getElementById("form-error");
+    error.hidden = true;
     var original = btn.textContent;
     btn.disabled = true;
     btn.textContent = t.sending || "Sending…";
@@ -169,12 +174,35 @@
       if (qs.get(k)) data[k] = qs.get(k);
     });
 
-    fetch("/api/lead", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
+    new Promise(function (resolve, reject) {
+      var timer = setTimeout(function () { reject(new Error("recaptcha_failed")); }, 12000);
+      function fail() { clearTimeout(timer); reject(new Error("recaptcha_failed")); }
+      if (!form.dataset.recaptchaSiteKey || !window.grecaptcha) { fail(); return; }
+      window.grecaptcha.ready(function () {
+        try {
+          window.grecaptcha.execute(form.dataset.recaptchaSiteKey, {
+            action: "landing_" + data.market.toLowerCase()
+          }).then(function (token) { clearTimeout(timer); resolve(token); }, fail);
+        } catch (err) { fail(); }
+      });
     })
-      .catch(function () { /* demo mode: never block the confirmation on a network error */ })
+      .then(function (token) {
+        data.recaptcha_token = token;
+        return fetch("/lp/api/lead.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+      })
+      .then(function (response) {
+        return response.json().then(function (result) {
+          if (!response.ok) throw new Error(result.error || "Submission failed");
+          return result;
+        });
+      })
+      .then(function (result) {
+        if (!result || result.ok !== true) throw new Error("Submission failed");
+      })
       .then(function () {
         track("Lead", { content_name: "school_registration", content_category: data.market });
         track("CompleteRegistration", { content_name: "school_registration" });
@@ -182,6 +210,14 @@
         document.querySelector(".progress").hidden = true;
         document.getElementById("form-done").hidden = false;
         document.getElementById("form-card").scrollIntoView({ behavior: "smooth", block: "center" });
+      })
+      .catch(function (err) {
+        error.textContent = err.message === "recaptcha_failed"
+          ? (t.recaptchaError || "Verification failed. Please refresh and try again.")
+          : (t.submitError || "We could not save your request. Please try again.");
+        error.hidden = false;
+      })
+      .finally(function () {
         btn.disabled = false;
         btn.textContent = original;
       });

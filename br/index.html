@@ -5,30 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Young Master Challenge Brasil | Competição internacional de Inglês e Matemática</title>
 <meta name="description" content="Inscreva os alunos da sua escola no Young Master Challenge: competição internacional de Inglês e Matemática. A rodada online é feita dentro da própria escola, cada participante recebe certificado internacional e os melhores avançam para a Grande Final Mundial em Londres.">
-<link rel="canonical" href="https://youngmaster-latam.vercel.app/br/">
-<link rel="alternate" hreflang="pt-br" href="https://youngmaster-latam.vercel.app/br/">
-<link rel="alternate" hreflang="es-mx" href="https://youngmaster-latam.vercel.app/mx/">
+<link rel="canonical" href="https://www.youngmaster.org/lp/br">
+<link rel="alternate" hreflang="pt-br" href="https://www.youngmaster.org/lp/br">
+<link rel="alternate" hreflang="es-mx" href="https://www.youngmaster.org/lp/mx">
 <meta name="robots" content="noindex, follow">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Leve sua escola para a Final Mundial em Londres">
 <meta property="og:description" content="Competição internacional de Inglês e Matemática. A rodada online é feita dentro da própria escola e cada participante recebe um certificado internacional.">
-<meta property="og:image" content="https://youngmaster-latam.vercel.app/assets/img/hero-group.webp">
+<meta property="og:image" content="https://www.youngmaster.org/lp/assets/img/hero-group.webp">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="icon" href="/assets/img/logo-dark.png?v=20260918b">
+<link rel="icon" href="/lp/assets/img/logo-dark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="/assets/img/corridor.webp?v=20260918b" fetchpriority="high">
+<link rel="preload" as="image" href="/lp/assets/img/corridor.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css?v=20260918b">
+<link rel="stylesheet" href="/lp/assets/css/site.css?v=mx-calendar-2026">
 
-<!-- ===================================================================
-     META PIXEL — dataset da Young Master 1876285623353605.
-     site.js dispara PageView, ScrollDepth, FormStarted, FormStep2, CTAClick
-     e, no envio com sucesso, Lead + CompleteRegistration.
-     =================================================================== -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -44,7 +39,7 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
 
 <header class="site-header">
   <div class="header-in">
-    <a href="#top"><img class="header-logo" src="/assets/img/logo-light.png?v=20260918b" alt="Young Master Challenge" width="900" height="247"></a>
+    <a href="#top"><img class="header-logo" src="/lp/assets/img/logo-light.png" alt="Young Master Challenge" width="900" height="247"></a>
     <div class="header-sp"></div>
     <span class="header-note">Competição internacional · Inglês e Matemática</span>
     <a class="btn btn-primary btn-sm" href="#form-card" data-cta="header">Inscrever minha escola</a>
@@ -54,7 +49,7 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
 <main id="top">
 
 <!-- ============ HERO + FORM ============ -->
-<section class="hero" style="--hero-photo:url('/assets/img/corridor.webp?v=20260918b')">
+<section class="hero" style="--hero-photo:url('/lp/assets/img/corridor.webp')">
   <div class="hero-in">
 
     <div>
@@ -75,7 +70,7 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
 
       <div class="hero-proof">
         <div><b>4.500+</b><span>Participantes online</span></div>
-        <div><b>200+</b><span>Países representados</span></div>
+        <div><b>30+</b><span>Países representados</span></div>
         <div><b>9–17</b><span>Anos de idade</span></div>
         <div><b>Londres</b><span>Grande Final Mundial</span></div>
       </div>
@@ -85,13 +80,12 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
     <div class="form-card" id="form-card">
       <div class="form-head">
         <h2>Receba as informações para sua escola</h2>
-        <p>Enviamos pelo WhatsApp o conteúdo programático e o processo de inscrição. Sem compromisso.</p>
-        <p class="next">📅 Próxima rodada online: <b>23 e 24 de outubro de 2026</b></p>
+        <p>Enviamos pelo WhatsApp as datas, o conteúdo programático e o processo de inscrição. Sem compromisso.</p>
       </div>
 
       <div class="progress"><span class="on"></span><span></span></div>
 
-      <form id="lead-form" data-market="BR" novalidate>
+      <form id="lead-form" data-market="BR" data-recaptcha-site-key="6LdognctAAAAALEtPb6OBdb1SQTpcvaTKAgoO8LS" novalidate>
         <div class="form-body" id="form-steps">
 
           <!-- step 1 -->
@@ -116,6 +110,17 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
             <div class="field">
               <label for="br-email">E-mail</label>
               <input id="br-email" name="email" type="email" autocomplete="email" placeholder="nome@escola.com.br" required>
+              <span class="msg"></span>
+            </div>
+
+            <div class="field">
+              <label for="br-english">Do you speak English?</label>
+              <select id="br-english" name="english_proficiency" required>
+                <option value="">Selecione uma opção</option>
+                <option value="None">None</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Fluent">Fluent</option>
+              </select>
               <span class="msg"></span>
             </div>
 
@@ -181,6 +186,7 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
               <span>Autorizo um coordenador do Young Master Challenge a entrar em contato por WhatsApp ou e-mail com as informações da competição.</span>
             </label>
 
+            <p id="form-error" role="alert" hidden></p>
             <button class="btn btn-primary btn-block" type="submit" data-submit>Enviar minha solicitação</button>
             <button class="btn-back" type="button" data-back>← Voltar</button>
           </div>
@@ -204,7 +210,7 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
 <section class="stat-strip">
   <div class="wrap">
     <div><b>4.500+</b><span>Participantes na rodada online</span></div>
-    <div><b>200+</b><span>Países representados</span></div>
+    <div><b>30+</b><span>Países representados</span></div>
     <div><b>3</b><span>Categorias por idade</span></div>
     <div><b>2</b><span>Disciplinas: Inglês e Matemática</span></div>
   </div>
@@ -233,7 +239,7 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
       <div class="card">
         <div class="ic">📜</div>
         <h3>Certificado para cada aluno</h3>
-        <p>Todos os participantes recebem certificado internacional. As melhores pontuações de outubro a janeiro disputam o pacote da Grande Final em Londres.</p>
+        <p>Todos os participantes recebem certificado. As melhores pontuações conquistam o reconhecimento Gold, Silver ou Bronze Master.</p>
       </div>
       <div class="card">
         <div class="ic">🚀</div>
@@ -326,57 +332,57 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
 </section>
 
 <!-- ============ CALENDAR ============ -->
-<section class="section" id="datas">
+<section class="section tint mx-calendar" id="datas" aria-labelledby="calendar-title">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="kicker">Calendário 2026 – 2027</p>
-      <h2>As datas já estão confirmadas</h2>
+      <h2 id="calendar-title">As datas já estão confirmadas</h2>
       <p>Sua escola escolhe a rodada que melhor se encaixa no calendário. Pode participar de uma ou de várias.</p>
     </div>
 
-    <div class="cal-grid reveal">
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Rodada online</th><th>Data da prova</th></tr></thead>
+    <div class="mx-calendar-grid">
+      <div class="table-wrap reveal">
+        <table class="mx-calendar-table" aria-label="Datas das rodadas online 2026 – 2027">
+          <thead><tr><th scope="col">Rodada online</th><th scope="col">Data da prova</th></tr></thead>
           <tbody>
-            <tr class="hot"><td>Rodada de outubro <span class="tag-next">Próxima</span></td><td>23 e 24 de outubro de 2026</td></tr>
-            <tr><td>Rodada de novembro</td><td>20 e 21 de novembro de 2026</td></tr>
-            <tr><td>Rodada de dezembro</td><td>18 e 19 de dezembro de 2026</td></tr>
-            <tr><td>Rodada de janeiro</td><td>22 e 23 de janeiro de 2027</td></tr>
-            <tr><td>Rodada de fevereiro</td><td>12 e 13 de fevereiro de 2027</td></tr>
-            <tr><td>Rodada de março</td><td>5 e 6 de março de 2027</td></tr>
-            <tr><td>Rodada de abril</td><td>16 e 17 de abril de 2027</td></tr>
-            <tr><td>Rodadas locais</td><td>De setembro a janeiro</td></tr>
+            <tr class="mx-calendar-next"><th scope="row">Rodada de outubro <span class="mx-calendar-badge">Próxima</span></th><td>23 e 24 de outubro de 2026</td></tr>
+            <tr><th scope="row">Rodada de novembro</th><td>20 e 21 de novembro de 2026</td></tr>
+            <tr><th scope="row">Rodada de dezembro</th><td>18 e 19 de dezembro de 2026</td></tr>
+            <tr><th scope="row">Rodada de janeiro</th><td>22 e 23 de janeiro de 2027</td></tr>
+            <tr><th scope="row">Rodada de fevereiro</th><td>12 e 13 de fevereiro de 2027</td></tr>
+            <tr><th scope="row">Rodada de março</th><td>5 e 6 de março de 2027</td></tr>
+            <tr><th scope="row">Rodada de abril</th><td>16 e 17 de abril de 2027</td></tr>
+            <tr><th scope="row">Rodadas locais</th><td>De setembro a janeiro</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="road">
-        <h3>O caminho até Londres</h3>
-        <p class="road-sub">Da sala de aula ao palco mundial.</p>
-        <ol>
+      <aside class="mx-calendar-path reveal" aria-labelledby="calendar-path-title">
+        <h3 id="calendar-path-title">O caminho até Londres</h3>
+        <p>Da sala de aula ao palco mundial.</p>
+        <ol class="mx-calendar-timeline">
           <li>
-            <div class="ev">1 · Rodada online</div>
-            <div class="dt">Na própria escola, na data que você escolher</div>
+            <h4>1 · Rodada online</h4>
+            <p>Na própria escola, na data que você escolher</p>
           </li>
           <li>
-            <div class="ev">2 · Rodada regional</div>
-            <div class="dt">Kuala Lumpur · 26 de setembro de 2026<br>
+            <h4>2 · Rodada regional</h4>
+            <p>Kuala Lumpur · 26 de setembro de 2026<br>
                             Dubai · 16 a 21 de março de 2027<br>
-                            Istambul · 23 a 28 de março de 2027</div>
+                            Istambul · 23 a 28 de março de 2027</p>
           </li>
-          <li class="final">
-            <div class="ev">3 · Grande Final Mundial · Londres</div>
-            <div class="dt">31 de julho a 6 de agosto de 2027</div>
+          <li>
+            <h4>3 · Grande Final Mundial · Londres</h4>
+            <p>31 de julho a 6 de agosto de 2027</p>
           </li>
         </ol>
-      </div>
+      </aside>
     </div>
   </div>
 </section>
 
 <!-- ============ CERTIFICATES / PRIZES ============ -->
-<section class="section tint">
+<section class="section">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="kicker">Prêmios das rodadas online</p>
@@ -388,7 +394,7 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
     <div class="table-wrap reveal">
       <table>
         <thead>
-          <tr><th>Resultado</th><th>Prêmio para a Grande Final Mundial</th></tr>
+          <tr><th scope="col">Resultado</th><th scope="col">Prêmio para a Grande Final Mundial</th></tr>
         </thead>
         <tbody>
           <tr><td class="medal"><span class="dot gold"></span>1.º lugar — melhor pontuação de outubro a janeiro</td><td><strong>Pacote completo em Londres, gratuito</strong></td></tr>
@@ -405,7 +411,7 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
 </section>
 
 <!-- ============ GALLERY ============ -->
-<section class="section">
+<section class="section tint">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="kicker">A competição em imagens</p>
@@ -414,14 +420,14 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
     </div>
 
     <div class="gallery reveal">
-      <figure><img src="/assets/img/hero-group.webp?v=20260918b" alt="Alunos do Young Master Challenge reunidos no dia da competição" loading="lazy" width="1500" height="844"></figure>
-      <figure><img src="/assets/img/mascot-solo.webp?v=20260918b" alt="Participante com o mascote oficial da competição" loading="lazy" width="1000" height="562"></figure>
-      <figure><img src="/assets/img/auditorium.webp?v=20260918b" alt="Auditório lotado de participantes na final" loading="lazy" width="1200" height="675"></figure>
-      <figure><img src="/assets/img/exam-desk.webp?v=20260918b" alt="Aluno fazendo a prova de conhecimentos" loading="lazy" width="1000" height="562"></figure>
-      <figure><img src="/assets/img/winners.webp?v=20260918b" alt="Vencedores do Young Master Challenge com o troféu" loading="lazy" width="1000" height="562"></figure>
-      <figure><img src="/assets/img/certificates.webp?v=20260918b" alt="Participantes comemorando com seus certificados" loading="lazy" width="1000" height="562"></figure>
-      <figure><img src="/assets/img/merch-table.webp?v=20260918b" alt="Participantes no dia da competição" loading="lazy" width="1000" height="562"></figure>
-      <figure><img src="/assets/img/photo-frame.webp?v=20260918b" alt="Participantes na área de fotos do evento" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/lp/assets/img/hero-group.webp" alt="Alunos do Young Master Challenge reunidos no dia da competição" loading="lazy" width="1500" height="844"></figure>
+      <figure><img src="/lp/assets/img/mascot-solo.webp" alt="Participante com o mascote oficial da competição" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/lp/assets/img/auditorium.webp" alt="Auditório lotado de participantes na final" loading="lazy" width="1200" height="675"></figure>
+      <figure><img src="/lp/assets/img/exam-desk.webp" alt="Aluno fazendo a prova de conhecimentos" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/lp/assets/img/winners.webp" alt="Vencedores do Young Master Challenge com o troféu" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/lp/assets/img/certificates.webp" alt="Participantes comemorando com seus certificados" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/lp/assets/img/merch-table.webp" alt="Participantes no dia da competição" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/lp/assets/img/photo-frame.webp" alt="Participantes na área de fotos do evento" loading="lazy" width="1000" height="562"></figure>
     </div>
   </div>
 </section>
@@ -448,7 +454,7 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
       </p>
     </div>
     <div class="reveal">
-      <img src="/assets/img/london-final.webp?v=20260918b" alt="Participantes ao lado do anúncio da Grande Final Mundial em Londres" loading="lazy" width="1600" height="900">
+      <img src="/lp/assets/img/london-final.webp" alt="Participantes ao lado do anúncio da Grande Final Mundial em Londres" loading="lazy" width="1000" height="563">
     </div>
   </div>
 </section>
@@ -516,7 +522,7 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
       </details>
       <details>
         <summary>Quais são as datas da próxima rodada?</summary>
-        <p>A primeira rodada online da temporada é em <strong>23 e 24 de outubro de 2026</strong>, e há uma rodada por mês até abril de 2027. O calendário completo está acima. O coordenador ajuda você a escolher a rodada que melhor se encaixa no calendário da sua escola.</p>
+        <p>As datas da próxima temporada são confirmadas de forma personalizada. Deixe seus dados e o coordenador envia o calendário oficial e o conteúdo pelo WhatsApp.</p>
       </details>
       <details>
         <summary>O que eu recebo como professor(a)?</summary>
@@ -540,7 +546,7 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
 <footer class="site-footer">
   <div class="wrap footer-in">
     <div>
-      <img src="/assets/img/logo-light.png?v=20260918b" alt="Young Master Challenge" width="900" height="247">
+      <img src="/lp/assets/img/logo-light.png" alt="Young Master Challenge" width="900" height="247">
       <p>Competição internacional de Inglês e Matemática para alunos de 9 a 17 anos, com rodadas online, locais e regionais, e uma Grande Final Mundial em Londres.</p>
     </div>
     <div>
@@ -556,7 +562,7 @@ if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('tra
       <ul>
         <li><a href="https://www.youngmaster.org/" target="_blank" rel="noopener">Site oficial</a></li>
         <li><a href="https://www.youngmaster.org/privacy-notice/" target="_blank" rel="noopener">Aviso de privacidade</a></li>
-        <li><a href="/mx/">Versión en español (México)</a></li>
+        <li><a href="/lp/mx">Versión en español (México)</a></li>
       </ul>
     </div>
   </div>
@@ -579,9 +585,12 @@ window.YM_I18N = {
   required: "Este campo é obrigatório",
   email: "Digite um e-mail válido",
   phone: "Digite um número de WhatsApp válido",
+  recaptchaError: "Não foi possível verificar sua solicitação. Atualize a página e tente novamente.",
+  submitError: "Não foi possível salvar sua solicitação. Tente novamente.",
   sending: "Enviando…"
 };
 </script>
-<script src="/assets/js/site.js?v=20260918b" defer></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LdognctAAAAALEtPb6OBdb1SQTpcvaTKAgoO8LS" defer></script>
+<script src="/lp/assets/js/site.js?v=recaptcha1" defer></script>
 </body>
 </html>

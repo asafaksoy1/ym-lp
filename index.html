@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Young Master Challenge — LATAM landing pages</title>
+<title>Young Master Challenge — campaign landing pages</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="/assets/img/logo-dark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Cairo:wght@600;800&display=swap" rel="stylesheet">
 <style>
   :root { --yellow:#ffde59; --ink:#0e0101; }
   * { box-sizing:border-box; }
@@ -24,6 +24,10 @@
   .sub { color:rgba(255,255,255,.65); font-size:16px; margin:0 0 38px; }
   .grid { display:grid; gap:16px; }
   @media (min-width:640px) { .grid { grid-template-columns:1fr 1fr; } }
+  @media (min-width:980px) { .grid { grid-template-columns:repeat(3,1fr); } }
+  .country.ar { font-family:"Cairo",system-ui,sans-serif; direction:rtl; }
+  .group { margin:34px 0 14px; font-size:12px; font-weight:700; letter-spacing:.14em;
+           text-transform:uppercase; color:rgba(255,222,89,.75); }
   a.card {
     display:block; text-decoration:none; color:inherit;
     background:rgba(255,255,255,.06); border:1px solid rgba(255,222,89,.3);
@@ -42,7 +46,9 @@
   <div class="box">
     <img class="logo" src="/assets/img/logo-light.png" alt="Young Master Challenge">
     <h1>Meta Ads landing pages</h1>
-    <p class="sub">Two conversion-focused landing pages, each written natively for its market.</p>
+    <p class="sub">Conversion-focused landing pages, each written natively for its market.</p>
+
+    <p class="group">Latin America</p>
 
     <div class="grid">
       <a class="card" href="/mx/">
@@ -56,6 +62,29 @@
         <div class="country">Brasil</div>
         <div class="lang">PORTUGUÊS (PT-BR)</div>
         <div class="go">Ver a landing page →</div>
+      </a>
+    </div>
+
+    <p class="group">Gulf — Arabic</p>
+
+    <div class="grid">
+      <a class="card" href="/ae/">
+        <div class="flag">🇦🇪</div>
+        <div class="country ar">الإمارات العربية المتحدة</div>
+        <div class="lang">العربية (AR-AE)</div>
+        <div class="go">View the landing page →</div>
+      </a>
+      <a class="card" href="/sa/">
+        <div class="flag">🇸🇦</div>
+        <div class="country ar">المملكة العربية السعودية</div>
+        <div class="lang">العربية (AR-SA)</div>
+        <div class="go">View the landing page →</div>
+      </a>
+      <a class="card" href="/qa/">
+        <div class="flag">🇶🇦</div>
+        <div class="country ar">دولة قطر</div>
+        <div class="lang">العربية (AR-QA)</div>
+        <div class="go">View the landing page →</div>
       </a>
     </div>
 

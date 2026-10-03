@@ -1,0 +1,322 @@
+/* ============================================================
+   Young Master Challenge — Arabic (RTL) layer
+   Gulf landing pages: /lp/ae, /lp/sa, /lp/qa
+
+   Loaded AFTER site.css and ONLY on the Arabic pages. site.css is
+   never edited: every selector here is scoped to [dir="rtl"], so
+   nothing in this file can reach /lp/mx or /lp/br.
+
+   Typeface: Cairo — Poppins carries no Arabic coverage.
+   Breakpoints are the ones site.css already uses (480 / 559max /
+   560 / 940 / 980). Nothing new is invented.
+
+   Most of site.css mirrors itself for free: every multi-column
+   layout is flex or grid, and both reverse on their own under
+   dir="rtl". What follows is only the part that does not.
+   ============================================================ */
+
+
+/* ---------------- Typeface ---------------- */
+
+/* Swapped at the root so everything reading var(--font) — body,
+   .btn, inputs, selects — follows without a second rule. */
+:root[dir="rtl"] {
+  --font: "Cairo", "Noto Sans Arabic", "Segoe UI", Tahoma, system-ui, Arial, sans-serif;
+}
+
+/* Cairo sits lower in its em box than Poppins, and Arabic carries
+   hamza, shadda and deep descenders, so the LTR line-heights clip.
+   Open body copy and the headings back up. */
+[dir="rtl"] body { line-height: 1.75; }
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4 { line-height: 1.32; }
+
+/* the big clamped display sizes can stay tighter than that */
+[dir="rtl"] .hero h1,
+[dir="rtl"] .section-head h2,
+[dir="rtl"] .split h2,
+[dir="rtl"] .cta-final h2 { line-height: 1.24; }
+
+/* Arabic is never tracked for emphasis, and negative tracking in
+   particular fights the joining behaviour of the script. Zero out
+   every place site.css sets letter-spacing. */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] .btn,
+[dir="rtl"] .eyebrow,
+[dir="rtl"] .kicker,
+[dir="rtl"] .step-label,
+[dir="rtl"] .form-head h2,
+[dir="rtl"] thead th,
+[dir="rtl"] .mx-calendar-badge,
+[dir="rtl"] .site-footer h4 { letter-spacing: 0; }
+
+/* small-type blocks that were set tight for Latin */
+[dir="rtl"] .eyebrow { line-height: 1.5; }
+[dir="rtl"] .consent { line-height: 1.65; }
+[dir="rtl"] .mx-calendar-timeline h4 { line-height: 1.4; }
+
+/* the big numeric stats: line-height 1 clips Cairo's digits */
+[dir="rtl"] .stat-strip b { line-height: 1.15; }
+[dir="rtl"] .hero-proof div { line-height: 1.4; }
+[dir="rtl"] .hero-proof b { line-height: 1.25; }
+
+/* Arabic has no true italic; browsers synthesise a slant that
+   smears the joins. Keep the quote upright — the yellow mark and
+   the card border already set it apart. */
+[dir="rtl"] .quote p { font-style: normal; }
+
+
+/* ---------------- Bidi helpers ---------------- */
+
+/* Wrap any Latin or numeric run whose internal order has to survive
+   an RTL paragraph. Without it the neutral characters inside the run
+   take the paragraph direction and jump: "16-21" renders "21-16",
+   and the Latin label "Do you speak English?" renders with its
+   question mark on the wrong end.
+
+   .num  — number and date ranges, scores, dialling codes
+   .ltr  — whole Latin phrases kept in English on purpose
+
+   Same behaviour, two names, so the markup says which it means. */
+[dir="rtl"] .num,
+[dir="rtl"] .ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+/* direction: ltr resets text-align: start to the left, which would
+   pull an English label out of line with the Arabic labels above
+   and below it. Put the box back on the right; only the run inside
+   it stays LTR, so the question mark still lands on the correct end.
+   The class is doubled to outrank the text-align: start defaults
+   further down this file, which would otherwise win on source order. */
+[dir="rtl"] label.ltr.ltr,
+[dir="rtl"] p.ltr.ltr { text-align: right; }
+
+/* keep the stat values from leaking their direction into the label
+   underneath them */
+[dir="rtl"] .stat-strip b,
+[dir="rtl"] .hero-proof b { unicode-bidi: isolate; }
+
+
+/* ---------------- Header ---------------- */
+
+/* .header-in is flex, so logo / spacer / note / CTA reverse on
+   their own: logo lands at the right, the CTA at the left. The
+   logo is a wordmark and must never be mirrored, so no transform
+   is applied to it anywhere in this file. Only the text side needs
+   stating. */
+[dir="rtl"] .header-note { text-align: end; }
+
+
+/* ---------------- Hero ---------------- */
+
+/* The scrim runs dark-to-light at 105deg, which puts the solid end
+   under the left column. The copy moves to the right under RTL, so
+   mirror the angle (360 - 105). */
+[dir="rtl"] .hero::after {
+  background: linear-gradient(255deg, rgba(14, 1, 1, .96) 0%, rgba(14, 1, 1, .86) 45%, rgba(14, 1, 1, .62) 100%);
+}
+
+/* .hero::before is horizontally centred (center 30%), so the photo
+   needs nothing — and must not be flipped, it has faces in it. */
+
+/* .hero-in is a 2-col grid and .hero-points li is flex: the copy
+   column and the ✓ tick both move to the right unaided. The tick
+   only needs renudging against the looser Arabic line box. */
+[dir="rtl"] .hero-points .tick { margin-top: 3px; }
+[dir="rtl"] .split li .tick { margin-top: 4px; }
+
+[dir="rtl"] .hero-sub,
+[dir="rtl"] .hero-points li { text-align: start; }
+
+
+/* ---------------- Form card ---------------- */
+
+[dir="rtl"] .field label,
+[dir="rtl"] .field .msg,
+[dir="rtl"] .step-label,
+[dir="rtl"] #form-error { text-align: start; }
+
+[dir="rtl"] .field input,
+[dir="rtl"] .field select { text-align: start; }
+
+/* the custom select chevron is painted as a background image on the
+   right with room cleared by padding-right — both must cross over */
+[dir="rtl"] .field select {
+  background-position: left 14px center;
+  padding-right: 14px;
+  padding-left: 38px;
+}
+
+/* .phone-group is flex, so the country-code chip reverses to the
+   right on its own — but it then carries the wrong open edge and
+   the wrong rounded corners. Shorthands cannot be expressed
+   logically, so flip them outright. */
+[dir="rtl"] .phone-group .cc {
+  border-left: none;
+  border-right: 1.5px solid var(--line);
+  border-radius: 0 11px 11px 0;
+  /* a dialling code is read left-to-right in every market */
+  direction: ltr;
+}
+[dir="rtl"] .phone-group input { border-radius: 11px 0 0 11px; }
+
+/* Phone and e-mail values are Latin runs. Force their internal
+   order, then align to the right, which under RTL is the edge the
+   reader starts from — so the number still sits against the chip. */
+[dir="rtl"] input[type="tel"],
+[dir="rtl"] input[type="email"] {
+  direction: ltr;
+  text-align: right;
+}
+
+/* .consent and .progress are flex and reverse unaided: the
+   checkbox lands at the right, and the progress bar fills from the
+   right leftwards, which is the correct reading direction. Nothing
+   to do beyond the text side. */
+[dir="rtl"] .consent span { text-align: start; }
+
+/* .btn-back shrink-wraps its text, so it already sits at the right.
+   Its arrow glyph is markup — see the notes. */
+[dir="rtl"] .btn-back { text-align: start; }
+
+
+/* ---------------- Section furniture ---------------- */
+
+/* .section-head, .stat-strip, .cta-final and .form-done are all
+   centred, so they are direction-neutral. .cards, .steps, .cats,
+   .gallery, .quotes, .split and .footer-in are grids and reverse
+   on their own. Only the odd text default needs stating. */
+[dir="rtl"] .card p,
+[dir="rtl"] .step p,
+[dir="rtl"] .faq details p,
+[dir="rtl"] .site-footer p { text-align: start; }
+
+
+/* ---------------- Calendar: table ---------------- */
+
+/* site.css pins table text to the left in two places */
+[dir="rtl"] th,
+[dir="rtl"] td,
+[dir="rtl"] .mx-calendar-table th,
+[dir="rtl"] .mx-calendar-table td { text-align: start; }
+
+/* the accent bar marking the next round is an inset shadow on the
+   row's leading edge — negate the offset to move it across */
+[dir="rtl"] .mx-calendar-next th { box-shadow: inset -4px 0 var(--yellow-deep); }
+
+/* the "next round" chip trails the round name, so its gap belongs
+   on the inline-start side */
+[dir="rtl"] .mx-calendar-badge {
+  margin-left: 0;
+  margin-inline-start: 8px;
+}
+
+
+/* ---------------- Calendar: timeline ---------------- */
+
+/* The rail, its indent and the dot all live on the left. Flip the
+   whole set; the border shorthand cannot go logical, so it is
+   zeroed on one side and rebuilt on the other. */
+[dir="rtl"] .mx-calendar-timeline li {
+  padding: 0 30px 20px 0;
+  border-left: 0;
+  border-right: 2px solid rgba(255, 222, 89, .3);
+  margin-left: 0;
+  margin-right: 7px;
+}
+[dir="rtl"] .mx-calendar-timeline li::before {
+  left: auto;
+  right: -8px;
+}
+/* site.css hides the rail below the last dot via border-left-color,
+   which no longer exists here. Restate it on the right — and carry
+   padding-bottom: 0 over, because the rule above would otherwise
+   win on cascade order and reopen the gap. */
+[dir="rtl"] .mx-calendar-timeline li:last-child {
+  padding-bottom: 0;
+  border-right-color: transparent;
+}
+
+
+/* ---------------- Prizes table ---------------- */
+
+/* .medal keeps its colour dot ahead of the label, so the dot ends
+   up on the right and its gap moves to the inline-end side */
+[dir="rtl"] td .dot {
+  margin-right: 0;
+  margin-inline-end: 9px;
+}
+
+/* .table-wrap scrolls horizontally under 520px; browsers start an
+   RTL scroll container at its own start edge, so the first column
+   is already the one in view. */
+
+
+/* ---------------- FAQ ---------------- */
+
+/* the +/– marker is absolutely positioned on the right, with the
+   summary padded to clear it */
+[dir="rtl"] .faq summary {
+  padding-inline-start: 0;
+  padding-inline-end: 30px;
+  text-align: start;
+}
+[dir="rtl"] .faq summary::after {
+  right: auto;
+  left: 2px;
+}
+
+
+/* ---------------- Footer ---------------- */
+
+/* .footer-in is a grid and .footer-bottom is a space-between flex
+   row — both reverse unaided. The lists only need their text side. */
+[dir="rtl"] .site-footer ul,
+[dir="rtl"] .site-footer h4,
+[dir="rtl"] .footer-bottom { text-align: start; }
+
+
+/* ---------------- Floating UI ---------------- */
+
+/* The WhatsApp button mirrors to the left. The reCAPTCHA badge has
+   to mirror with it, or the two stack on top of each other at
+   bottom-left: site.css parks the badge at left: 0 and clips it to
+   70px so only the logo shows. Pinning it right: 0 keeps that trick
+   intact — the clip still starts at the logo and the panel still
+   opens inwards on hover. */
+[dir="rtl"] .wa {
+  right: auto;
+  left: 16px;
+}
+[dir="rtl"] .grecaptcha-badge {
+  left: auto !important;
+  right: 0 !important;
+}
+
+/* .mobile-cta is pinned left: 0 / right: 0 and animates on
+   translateY, so it is already direction-neutral. */
+
+
+/* ---------------- Breakpoints ---------------- */
+
+/* site.css stacks the calendar chip under the round name here, with
+   a symmetric margin. Restate it so the inline-start margin above
+   does not leak into the stacked layout. */
+@media (max-width: 559px) {
+  [dir="rtl"] .mx-calendar-badge { margin: 5px 0 0; }
+}
+
+/* The highlighted phrase in the h1 is held on one line from 560px
+   up. Arabic equivalents run far longer than the Spanish, so let it
+   wrap — text-wrap: balance still keeps the shape tidy, and this is
+   what keeps the hero off a horizontal scrollbar at 360px. */
+@media (min-width: 560px) {
+  [dir="rtl"] .hero h1 .hl { white-space: normal; }
+}

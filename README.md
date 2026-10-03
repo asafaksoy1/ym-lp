@@ -1,163 +1,170 @@
-# Young Master Challenge — LATAM landing pages
+# Young Master Challenge — campaign landing pages
 
-Two conversion-focused Meta Ads landing pages for the **Young Master Challenge**, each written
-natively for its market (not translated from English):
+Conversion-focused Meta Ads landing pages for the **Young Master Challenge**, each written
+natively for its market — not translated from English.
 
-| Market | Path | Language |
-| --- | --- | --- |
-| Mexico | `/mx` | Spanish (es-MX) |
-| Brazil | `/br` | Portuguese (pt-BR) |
+| Market | Repo path | Live URL | Language |
+| --- | --- | --- | --- |
+| Mexico | `mx/` | `youngmaster.org/lp/mx` | Spanish (es-MX) |
+| Brazil | `br/` | `youngmaster.org/lp/br` | Portuguese (pt-BR) |
+| UAE | `ae/` | `youngmaster.org/lp/ae` | Arabic (ar, RTL) |
+| Saudi Arabia | `sa/` | `youngmaster.org/lp/sa` | Arabic (ar, RTL) |
+| Qatar | `qa/` | `youngmaster.org/lp/qa` | Arabic (ar, RTL) |
 
-Audience: **teachers, academic coordinators and school directors** who enter their students into
-the online round — matching the Young Master go-to-market plan.
+Audience: **teachers, academic coordinators, principals and school owners** who enter a group
+of their students into the online round. The pages do not address parents or students.
+
+**Deploying the three Arabic pages for the first time: see [DEPLOY-GULF.md](DEPLOY-GULF.md).**
+
+---
+
+## Where these pages actually run
+
+> **The live pages are served from youngmaster.org on Apache/PHP — not from Vercel.**
+> Deploying this repo to Vercel produces a preview only; it never reaches the live pages.
+> Going live means the Young Master developer copying files into `/lp/` on the host.
+
+The Vercel deployment (`ym-lp.vercel.app`) exists as a **visual reference** for review and for
+sharing with the client. On the preview the form will not submit: the PHP endpoint is not there
+and the reCAPTCHA key is bound to the youngmaster.org domain. That is expected.
+
+`vercel.json` rewrites `/lp/:path*` to `/:path*` so the preview can serve the same `/lp/...`
+asset paths the live pages use. This keeps one set of paths across both environments.
 
 ---
 
 ## Stack
 
-Deliberately plain: static HTML + CSS + one small JS file, plus a single serverless function for
-lead capture. No build step, no framework, no dependencies.
+Static HTML + CSS + one small JS file. No build step, no framework, no dependencies.
 
-That is a conversion decision, not a shortcut — the pages are ~150 KB and paint almost instantly
-on a mid-range Android over mobile data, which is what most Meta traffic in MX and BR actually is.
-Every second of load time costs roughly 5–8% of leads.
+That is a conversion decision, not a shortcut — the pages paint almost instantly on a mid-range
+Android over mobile data, which is what most of this traffic is.
 
 ```
 .
-├── index.html          Market chooser (the root URL — for sharing with the client)
-├── mx/index.html       Mexico landing page (es-MX)
-├── br/index.html       Brazil landing page (pt-BR)
-├── api/lead.js         Serverless lead capture endpoint
+├── index.html               Market chooser (the root URL — for sharing with the client)
+├── mx/index.html            Mexico (es-MX)
+├── br/index.html            Brazil (pt-BR)
+├── ae/index.html            UAE (ar, RTL)
+├── sa/index.html            Saudi Arabia (ar, RTL)
+├── qa/index.html            Qatar (ar, RTL)
 ├── assets/
-│   ├── css/site.css    Shared stylesheet (brand tokens at the top)
-│   ├── js/site.js      Two-step form, validation, Meta Pixel events
-│   └── img/            Event photography (WebP) + logo variants
-├── vercel.json         Clean URLs, caching, security headers
-└── package.json        Marks the project as ESM for the serverless function
+│   ├── css/site.css         Shared stylesheet (brand tokens at the top) — LTR
+│   ├── css/site-rtl.css     RTL overrides, loaded only by the Arabic pages
+│   ├── js/site.js           Two-step form, validation, reCAPTCHA v3, Meta Pixel events
+│   └── img/                 Event photography (WebP) + logo variants
+├── ads/                     Ad creatives and the script that renders them
+├── api/lead.js              Vercel-preview lead endpoint (NOT the live one — see below)
+├── DEPLOY-GULF.md           Handover instructions for the Young Master developer
+└── vercel.json              Clean URLs, the /lp rewrite, caching, security headers
 ```
+
+`mx/`, `br/`, `assets/css/site.css` and `assets/js/site.js` in this repo are kept
+**byte-identical to the live site**. Before editing any of them, re-sync from live first —
+the live version has been ahead of this repo before, and overwriting it loses work.
 
 ---
 
-## 1. Set the Meta Pixel (required before spending on ads)
+## Meta Pixel
 
-Both pages ship with the Pixel wired up but **not switched on**. In `mx/index.html` and
-`br/index.html`, find this line near the top:
-
-```js
-var YM_PIXEL_ID = 'PIXEL_ID_AQUI';
-```
-
-Replace `PIXEL_ID_AQUI` with the real Pixel ID (a ~15-digit number from Meta Events Manager).
-Until you do, the pages work normally and simply fire no events.
-
-Events already implemented:
+Live and firing on all pages. Dataset **1876285623353605**, installed inline in each page head.
 
 | Event | Fires when |
 | --- | --- |
 | `PageView` | Page load |
+| `CTAClick` | Any CTA that scrolls to the form |
 | `FormStarted` | Visitor types in the first field |
-| `FormStep2` | Visitor reaches step 2 of the form |
-| `Lead` | Form submitted successfully |
-| `CompleteRegistration` | Form submitted successfully |
+| `FormStep2` | Visitor reaches step 2 |
 | `ScrollDepth` | 50% and 90% scroll |
+| `Lead` | Form saved successfully |
+| `CompleteRegistration` | Form saved successfully |
 
-Optimise the ad set for **Lead**. Use `FormStarted` as a fallback audience signal while volume is
-still low.
+Optimise the ad set for **Lead**. `FormStarted` is a useful audience signal while volume is low.
 
----
+`Lead` fires **only** after the endpoint returns `ok: true`, so the reported lead count cannot
+drift above the saved lead count. A failed save shows the visitor an error and records nothing.
 
-## 2. Where the leads go
-
-Right now the project runs in **demo mode**: every submission is validated and written to the
-Vercel function logs (Vercel dashboard → project → **Logs**, search `YM LEAD`). Nothing is emailed
-or stored yet, and the visitor always sees the success state.
-
-To send leads somewhere real, set **one environment variable** in the Vercel project settings —
-no code change needed:
-
-```
-LEAD_WEBHOOK_URL = <any URL that accepts a JSON POST>
-```
-
-Each lead is then forwarded as JSON. That URL can be a Google Apps Script web app (writes straight
-to a Google Sheet), a Zapier or Make catch hook, n8n, or a CRM endpoint. If forwarding fails, the
-lead is still in the logs — nothing is lost.
-
-Each lead record contains name, WhatsApp, email, school, city, role, subject, approximate student
-count, consent, plus `market`, `locale`, and any `utm_*` / `fbclid` parameters carried in from the
-ad click, so you can attribute leads back to the exact ad.
+**Not yet in place: the Conversions API.** Everything is browser-side, so iOS and
+tracking-prevention losses are unmeasured. Sending a server-side `Lead` from `lead.php`
+(hashed email + phone) would recover part of that. Worth doing before budgets scale.
 
 ---
 
-## 3. Deploying to Vercel
+## Where the leads go
 
-The project is zero-config: no build step, images are committed, `/api` is picked up
-automatically. From this folder:
+**Live:** the form POSTs JSON to `/lp/api/lead.php`, which is maintained by the Young Master
+developer, along with reCAPTCHA v3 verification.
 
-```bash
-npx vercel --prod
-```
+**In this repo:** `api/lead.js` is the older Vercel serverless function, kept only for the
+preview environment. It is **not** what runs in production and its field whitelist does not
+match the Arabic pages. Do not treat it as the source of truth.
 
-The first run asks you to log in (it opens a browser) and to confirm the project name.
-Every later deploy is just the same command again.
+Field names sent by each page — the Arabic pages standardise on neutral English names:
 
-To regenerate the images from their originals (only needed if they are ever deleted):
+| Page | Field naming |
+| --- | --- |
+| `mx` | Spanish (`nombre`, `escuela`, `ciudad`, `cargo`, `materia`, `alumnos`, `consentimiento`) |
+| `br` | Portuguese (`nome`, `escola`, `cidade`, `cargo`, `disciplina`, `alunos`, `consentimento`) |
+| `ae` `sa` `qa` | English (`name`, `whatsapp`, `email`, `english_proficiency`, `school`, `city`, `role`, `subject`, `students`, `consent`) |
 
-```bash
-npm install && npm run assets
-```
-
-## 4. Pushing to GitHub
-
-The repo is committed locally but has no remote yet. Once you have a repo created on GitHub:
-
-```bash
-git remote add origin https://github.com/<user>/youngmaster-latam.git
-git branch -M main
-git push -u origin main
-```
+`site.js` additionally attaches `locale`, `market`, `page`, `referrer`, `utm_source`,
+`utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `fbclid` and `recaptcha_token`, so a
+lead can be attributed back to the exact ad.
 
 ---
 
-## Tone and register
+## Right-to-left (the Arabic pages)
 
-The two pages address the reader differently on purpose, because the polite default differs by
-market:
+`site.css` stays LTR and untouched. The Arabic pages load `assets/css/site-rtl.css` after it,
+and **every rule in that file is scoped to `[dir="rtl"]`** so it cannot reach `/lp/mx` or
+`/lp/br`. Please keep that property through any refactor — it is the only thing protecting the
+two live Latin American pages from an RTL regression.
 
-| Page | Form of address | Why |
-| --- | --- | --- |
-| `/mx` | **usted** (formal) | The reader is a teacher, academic coordinator or school director being approached with a business proposal. `tú` reads as friendly-informal and undercuts the pitch. |
-| `/br` | **você** | In Brazilian Portuguese `você` *is* the neutral professional register. `o(a) senhor(a)` would sound stiff and distant. |
+The Arabic pages load **Cairo** from Google Fonts instead of Poppins, which has no Arabic
+coverage.
 
-Keep `usted` if these pages are ever reused for other Spanish-speaking markets. It is the one form
-that is correct everywhere in Latin America — Argentina, Uruguay and much of Central America use
-`vos` rather than `tú`, so an informal page would have to be rewritten per country, while a formal
-one does not.
-
-Where a direct-object pronoun would have been gendered (`contactarlo` / `contactarla`), the copy
-is phrased neutrally instead (`comunicarnos con usted`). Most teachers in the target audience are
-women, so the masculine default would have been wrong more often than right.
+Directional characters in the markup are reversed by hand, not by CSS: a "continue" button
+points `←` on an RTL page and "back" points `→`.
 
 ---
 
 ## Facts used on the pages
 
-Everything factual is taken from youngmaster.org — nothing was invented:
+Taken from youngmaster.org and from the current live pages. Nothing here is invented.
 
-- Categories: **Little Bee 8–11**, **Honeybee 12–15**, **Bumblebee 15–18**
-- Subjects: English and Mathematics
-- Certificates by score: Gold Master 90–100 (£175 off the Global Final), Silver Master 75–89
-  (£125), Bronze Master 60–74 (£85), Honourable Mention 40–59
-- Showdown Challenge winning teams receive extra gifts (mascot, earphones, power banks)
-- 4,500+ online participants; 200+ countries
-- Paths: online / local / regional round → Global Final in London
+- Ages **9–17**, three age categories
+- Subjects: **English** and **Maths**
+- **4,500+** online-round participants · **30+** countries represented
+- Online rounds: 23–24 Oct 2026 · 20–21 Nov 2026 · 18–19 Dec 2026 · 22–23 Jan 2027 ·
+  12–13 Feb 2027 · 5–6 Mar 2027 · 16–17 Apr 2027. Local rounds: September to January.
+- Regional rounds: Kuala Lumpur 26 Sep 2026 · **Dubai 16–21 Mar 2027** · Istanbul 23–28 Mar 2027
+- Grand World Final: **London, 31 July – 6 August 2027**
+- Prizes, on the best score across the October–January rounds: 1st = full London package free,
+  2nd = 50% off, 3rd = 25% off, Gold certificate = 10% off
+- Every participant receives an international certificate regardless of score
 - Contact: 16-17 Grand Arcade, London N12 0EH · WhatsApp +44 7393 909302 · info@youngmaster.org
-- Testimonials from Madi, Amara and Georgiana, translated from the site
 
-**Deliberately not stated anywhere:** round dates and the per-student entry fee. The dates listed
-on the current site belong to a finished season, and inventing either on a client-facing page
-would be a liability. Both pages instead say a coordinator confirms dates and cost over WhatsApp,
-which also raises conversion by lowering commitment at the form.
+Two things to keep straight, because both have shipped wrong before:
 
-Photography is the client's own, from the shared Drive folder (Challenge Day, Excursions),
-resized and converted to WebP.
+1. **The country count is 30.** An earlier version had a counter reading "30+ countries" beside
+   body text saying "200 countries". Any number that appears twice must agree with itself.
+2. **There are no GBP certificate discount prices.** The old £175 / £125 / £85 rows were removed
+   because the main site does not carry them. Do not reintroduce them.
+
+Photography is the client's own, resized and converted to WebP.
+
+---
+
+## Tone and register
+
+The pages address the reader differently on purpose, because the polite default differs by market.
+
+| Page | Form of address | Why |
+| --- | --- | --- |
+| `mx` | **usted** | The reader is a teacher, coordinator or director being approached with a business proposal. `tú` reads as friendly-informal and undercuts the pitch. Also the one form that is correct across all of Latin America. |
+| `br` | **você** | In Brazilian Portuguese `você` *is* the neutral professional register. `o(a) senhor(a)` would sound stiff. |
+| `ae` `sa` `qa` | Modern Standard Arabic, institutional register | The register a school principal expects in official correspondence — not literary, not colloquial. |
+
+Where a direct-object pronoun would have been gendered (`contactarlo` / `contactarla`), the
+Spanish copy is phrased neutrally (`comunicarnos con usted`). Most teachers in the target
+audience are women, so a masculine default would have been wrong more often than right.
