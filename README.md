@@ -10,11 +10,12 @@ natively for its market — not translated from English.
 | UAE | `ae/` | `youngmaster.org/lp/ae` | Arabic (ar, RTL) |
 | Saudi Arabia | `sa/` | `youngmaster.org/lp/sa` | Arabic (ar, RTL) |
 | Qatar | `qa/` | `youngmaster.org/lp/qa` | Arabic (ar, RTL) |
+| International | `global/` | `youngmaster.org/lp/global` | English (any country) |
 
 Audience: **teachers, academic coordinators, principals and school owners** who enter a group
 of their students into the online round. The pages do not address parents or students.
 
-**Deploying the three Arabic pages for the first time: see [DEPLOY-GULF.md](DEPLOY-GULF.md).**
+**Deploying the Arabic and international pages for the first time: see [DEPLOY-GULF.md](DEPLOY-GULF.md).**
 
 ---
 
@@ -48,6 +49,7 @@ Android over mobile data, which is what most of this traffic is.
 ├── ae/index.html            UAE (ar, RTL)
 ├── sa/index.html            Saudi Arabia (ar, RTL)
 ├── qa/index.html            Qatar (ar, RTL)
+├── global/index.html        International (en) — country calling-code picker
 ├── assets/
 │   ├── css/site.css         Shared stylesheet (brand tokens at the top) — LTR
 │   ├── css/site-rtl.css     RTL overrides, loaded only by the Arabic pages
@@ -106,12 +108,27 @@ Field names sent by each page — the Arabic pages standardise on neutral Englis
 | `mx` | Spanish (`nombre`, `escuela`, `ciudad`, `cargo`, `materia`, `alumnos`, `consentimiento`) |
 | `br` | Portuguese (`nome`, `escola`, `cidade`, `cargo`, `disciplina`, `alunos`, `consentimento`) |
 | `ae` `sa` `qa` | English (`name`, `whatsapp`, `email`, `english_proficiency`, `school`, `city`, `role`, `subject`, `students`, `consent`) |
+| `global` | The same ten, plus `country` from the calling-code picker. `whatsapp` arrives with the dial code already prepended. |
 
 `site.js` additionally attaches `locale`, `market`, `page`, `referrer`, `utm_source`,
 `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `fbclid` and `recaptcha_token`, so a
 lead can be attributed back to the exact ad.
 
 ---
+
+## The international page's country picker
+
+`global/` carries a searchable calling-code selector covering 249 countries, with dial codes
+taken from the `countries-list` dataset rather than typed by hand. Two details are load-bearing:
+
+- **The dropdown markup sits outside `<form>`.** `site.js` binds to every `input` inside the
+  form, so a search box in there would trip its validation and submit the form on Enter.
+- **The picker's submit listener is registered before `site.js` runs**, because `site.js` is
+  deferred and this script is not. That ordering is what lets the dial code be prepended to
+  `whatsapp` before `site.js` reads the form. Do not add `defer` to it.
+
+The country is detected from the visitor's timezone, falling back to their browser locale and
+then to the UK, so most people never open the selector.
 
 ## Right-to-left (the Arabic pages)
 

@@ -22,6 +22,7 @@ const FIELDS = [
   "english_proficiency",
   "escuela", "escola", "school",    // school (MX / BR / AE-SA-QA)
   "ciudad", "cidade", "city",       // city (MX / BR / AE-SA-QA)
+  "country",                        // country, from the picker on the international page
   "cargo", "role",                  // role (MX-BR / AE-SA-QA)
   "materia", "disciplina", "subject",   // subject (MX / BR / AE-SA-QA)
   "alumnos", "alunos", "students",      // student count (MX / BR / AE-SA-QA)

@@ -6,30 +6,100 @@
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/lp/api/lead.php", "destination": "/api/lead" },
-    { "source": "/lp/:path*", "destination": "/:path*" }
+    {
+      "source": "/lp/api/lead.php",
+      "destination": "/api/lead"
+    },
+    {
+      "source": "/lp/:path*",
+      "destination": "/:path*"
+    }
   ],
   "redirects": [
-    { "source": "/mexico", "destination": "/mx", "permanent": false },
-    { "source": "/brasil", "destination": "/br", "permanent": false },
-    { "source": "/brazil", "destination": "/br", "permanent": false },
-    { "source": "/uae", "destination": "/ae", "permanent": false },
-    { "source": "/emirates", "destination": "/ae", "permanent": false },
-    { "source": "/saudi", "destination": "/sa", "permanent": false },
-    { "source": "/ksa", "destination": "/sa", "permanent": false },
-    { "source": "/qatar", "destination": "/qa", "permanent": false }
+    {
+      "source": "/mexico",
+      "destination": "/mx",
+      "permanent": false
+    },
+    {
+      "source": "/brasil",
+      "destination": "/br",
+      "permanent": false
+    },
+    {
+      "source": "/brazil",
+      "destination": "/br",
+      "permanent": false
+    },
+    {
+      "source": "/uae",
+      "destination": "/ae",
+      "permanent": false
+    },
+    {
+      "source": "/emirates",
+      "destination": "/ae",
+      "permanent": false
+    },
+    {
+      "source": "/saudi",
+      "destination": "/sa",
+      "permanent": false
+    },
+    {
+      "source": "/ksa",
+      "destination": "/sa",
+      "permanent": false
+    },
+    {
+      "source": "/qatar",
+      "destination": "/qa",
+      "permanent": false
+    },
+    {
+      "source": "/en",
+      "destination": "/global",
+      "permanent": false
+    },
+    {
+      "source": "/int",
+      "destination": "/global",
+      "permanent": false
+    },
+    {
+      "source": "/international",
+      "destination": "/global",
+      "permanent": false
+    },
+    {
+      "source": "/world",
+      "destination": "/global",
+      "permanent": false
+    }
   ]
 }

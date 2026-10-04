@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Young Master Challenge | International English &amp; Maths Competition for Schools</title>
+<meta name="description" content="Enter your students in the Young Master Challenge: an international English and Maths competition for ages 9–17. The online round is sat in your own classroom, every participant receives an international certificate, and the best advance to the Grand World Final in London.">
+<link rel="canonical" href="https://www.youngmaster.org/lp/global">
+<link rel="alternate" hreflang="en" href="https://www.youngmaster.org/lp/global">
+<link rel="alternate" hreflang="es-mx" href="https://www.youngmaster.org/lp/mx">
+<link rel="alternate" hreflang="pt-br" href="https://www.youngmaster.org/lp/br">
+<link rel="alternate" hreflang="ar" href="https://www.youngmaster.org/lp/ae">
+<meta name="robots" content="noindex, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Take your school to the Grand World Final in London">
+<meta property="og:description" content="An international English and Maths competition. The online round is sat inside your own school and every participant receives an international certificate.">
+<meta property="og:image" content="https://www.youngmaster.org/lp/assets/img/hero-group.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/lp/assets/img/logo-dark.png?v=20260918b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="/lp/assets/img/hero-group.webp?v=20260918b" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/lp/assets/css/site.css?v=mx-calendar-2026">
+
+<!-- ===================================================================
+     Country picker — page-scoped styles only. site.css is never touched,
+     so the Mexico, Brazil and Arabic pages cannot be affected by this.
+     =================================================================== -->
+<style>
+  .phone-group .cc-btn {
+    flex: 0 0 auto;
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 0 11px 0 13px;
+    background: var(--line-soft);
+    border: 1.5px solid var(--line);
+    border-right: none;
+    border-radius: 11px 0 0 11px;
+    font-family: inherit; font-size: 15px; font-weight: 700; color: var(--ink-3);
+    cursor: pointer; white-space: nowrap;
+    transition: background .15s ease, border-color .15s ease;
+  }
+  .phone-group .cc-btn:hover { background: #ece5d6; }
+  .phone-group .cc-btn:focus-visible {
+    outline: none; border-color: var(--yellow-deep);
+    box-shadow: 0 0 0 4px rgba(255, 222, 89, .32);
+  }
+  .cc-btn .cc-flag { font-size: 17px; line-height: 1; }
+  .cc-btn .cc-chev { flex: none; opacity: .5; }
+  .field.err .cc-btn { border-color: var(--red); }
+
+  .cc-pop {
+    position: fixed; z-index: 90;
+    width: 326px; max-width: calc(100vw - 24px);
+    background: var(--paper); border: 1.5px solid var(--line);
+    border-radius: 14px; box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .cc-pop[hidden] { display: none; }
+  .cc-search-wrap { padding: 10px; border-bottom: 1px solid var(--line-soft); }
+  .cc-search {
+    width: 100%; font-family: inherit; font-size: 15px; color: var(--ink);
+    background: var(--paper-2); border: 1.5px solid var(--line);
+    border-radius: 10px; padding: 10px 12px; appearance: none;
+  }
+  .cc-search:focus {
+    outline: none; background: #fff; border-color: var(--yellow-deep);
+    box-shadow: 0 0 0 4px rgba(255, 222, 89, .32);
+  }
+  .cc-list { list-style: none; margin: 0; padding: 6px; max-height: 268px; overflow-y: auto; }
+  .cc-list li {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 10px; border-radius: 9px; cursor: pointer;
+    font-size: 14.5px; line-height: 1.25;
+  }
+  .cc-list li .f { font-size: 17px; line-height: 1; flex: none; }
+  .cc-list li .n { flex: 1 1 auto; }
+  .cc-list li .d { color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .cc-list li[aria-selected="true"] { font-weight: 700; }
+  .cc-list li.on { background: var(--yellow-soft); }
+  .cc-empty { margin: 0; padding: 18px 14px 22px; text-align: center; color: var(--muted); font-size: 14px; }
+  @media (max-width: 420px) { .cc-pop { width: calc(100vw - 24px); } }
+</style>
+
+<!-- ===================================================================
+     META PIXEL — Young Master dataset 1876285623353605.
+     site.js fires PageView, ScrollDepth, FormStarted, FormStep2, CTAClick
+     and, on a successful submit, Lead + CompleteRegistration.
+     =================================================================== -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+var YM_PIXEL_ID = '1876285623353605';
+if (YM_PIXEL_ID.indexOf('PIXEL_ID') === -1) { fbq('init', YM_PIXEL_ID); fbq('track', 'PageView'); }
+</script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-in">
+    <a href="#top"><img class="header-logo" src="/lp/assets/img/logo-light.png" alt="Young Master Challenge" width="900" height="247"></a>
+    <div class="header-sp"></div>
+    <span class="header-note">International competition · English &amp; Maths</span>
+    <a class="btn btn-primary btn-sm" href="#form-card" data-cta="header">Enter my school</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO + FORM ============ -->
+<section class="hero" style="--hero-photo:url('/lp/assets/img/hero-group.webp')">
+  <div class="hero-in">
+
+    <div>
+      <span class="eyebrow">🐝 International English &amp; Maths competition</span>
+      <h1>Take your school to the <span class="hl">Grand World Final</span> in London</h1>
+      <p class="hero-sub">
+        The <strong>Young Master Challenge</strong> is an international English and Maths competition
+        for students aged 9 to 17. The online round is sat <strong>inside your own school</strong>,
+        every participant receives an international certificate, and the highest scorers advance to
+        the regional final and to the Grand World Final in London.
+      </p>
+
+      <ul class="hero-points">
+        <li><span class="tick">✓</span> <span>The round is sat online, in your own classroom — no travel, no logistics.</span></li>
+        <li><span class="tick">✓</span> <span>Every participant receives an <strong>international certificate</strong>.</span></li>
+        <li><span class="tick">✓</span> <span>You enter the whole group, with a coordinator alongside you at every step.</span></li>
+        <li><span class="tick">✓</span> <span>Open to schools worldwide — students from <strong>30+ countries</strong> already take part.</span></li>
+      </ul>
+
+      <div class="hero-proof">
+        <div><b>4,500+</b><span>Online participants</span></div>
+        <div><b>30+</b><span>Countries represented</span></div>
+        <div><b>9–17</b><span>Years of age</span></div>
+        <div><b>London</b><span>Grand World Final</span></div>
+      </div>
+    </div>
+
+    <!-- ============ LEAD FORM ============ -->
+    <div class="form-card" id="form-card">
+      <div class="form-head">
+        <h2>Request your school's information pack</h2>
+        <p>We send the round dates, the syllabus and the entry process by WhatsApp. No obligation.</p>
+      </div>
+
+      <div class="progress"><span class="on"></span><span></span></div>
+
+      <form id="lead-form" data-market="INT" data-recaptcha-site-key="6LdognctAAAAALEtPb6OBdb1SQTpcvaTKAgoO8LS" novalidate>
+        <input type="hidden" name="country" id="g-country" value="United Kingdom">
+        <div class="form-body" id="form-steps">
+
+          <!-- step 1 -->
+          <div class="form-step">
+            <p class="step-label">Step 1 of 2 · Your details</p>
+
+            <div class="field">
+              <label for="g-name">Full name</label>
+              <input id="g-name" name="name" type="text" autocomplete="name" placeholder="e.g. Sarah Thompson" required>
+              <span class="msg"></span>
+            </div>
+
+            <div class="field">
+              <label for="g-phone">WhatsApp number</label>
+              <div class="phone-group">
+                <button type="button" class="cc-btn" id="g-cc" aria-haspopup="listbox" aria-expanded="false" aria-label="Country calling code. Selected: United Kingdom, plus 44">
+                  <span class="cc-flag" id="g-cc-flag">🇬🇧</span>
+                  <span class="cc-dial" id="g-cc-dial">+44</span>
+                  <svg class="cc-chev" width="11" height="7" viewBox="0 0 14 9" aria-hidden="true"><path d="M1 1l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <input id="g-phone" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="7700 900123" data-phone="1" required>
+              </div>
+              <span class="msg"></span>
+            </div>
+
+            <div class="field">
+              <label for="g-email">Email address</label>
+              <input id="g-email" name="email" type="email" autocomplete="email" placeholder="name@school.org" required>
+              <span class="msg"></span>
+            </div>
+
+            <div class="field">
+              <label for="g-english">Do you speak English?</label>
+              <select id="g-english" name="english_proficiency" required>
+                <option value="">Select an option</option>
+                <option value="None">None</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Fluent">Fluent</option>
+              </select>
+              <span class="msg"></span>
+            </div>
+
+            <button class="btn btn-primary btn-block" type="button" data-next>Continue →</button>
+            <p class="form-foot">🔒 Your details are only used to contact you about the competition.</p>
+          </div>
+
+          <!-- step 2 -->
+          <div class="form-step" hidden>
+            <p class="step-label">Step 2 of 2 · Your school</p>
+
+            <div class="field">
+              <label for="g-school">School name</label>
+              <input id="g-school" name="school" type="text" placeholder="Name of the institution" required>
+              <span class="msg"></span>
+            </div>
+
+            <div class="field">
+              <label for="g-city">City</label>
+              <input id="g-city" name="city" type="text" placeholder="e.g. Manchester" required>
+              <span class="msg"></span>
+            </div>
+
+            <div class="field">
+              <label for="g-role">Your role</label>
+              <select id="g-role" name="role" required>
+                <option value="">Select an option</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Academic coordinator">Academic coordinator / Head of department</option>
+                <option value="Principal">Head teacher / Principal</option>
+                <option value="School owner">School owner or director</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="msg"></span>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="g-subject">Subject of interest</label>
+                <select id="g-subject" name="subject" required>
+                  <option value="">Select</option>
+                  <option value="English">English</option>
+                  <option value="Maths">Maths</option>
+                  <option value="Both">Both</option>
+                </select>
+                <span class="msg"></span>
+              </div>
+              <div class="field">
+                <label for="g-size">Approx. students</label>
+                <select id="g-size" name="students" required>
+                  <option value="">Select</option>
+                  <option value="1-20">1 – 20</option>
+                  <option value="21-50">21 – 50</option>
+                  <option value="51-100">51 – 100</option>
+                  <option value="100+">More than 100</option>
+                </select>
+                <span class="msg"></span>
+              </div>
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" name="consent" value="yes" required>
+              <span>I agree to be contacted by a Young Master Challenge coordinator by WhatsApp or email with information about the competition.</span>
+            </label>
+
+            <p id="form-error" role="alert" hidden></p>
+            <button class="btn btn-primary btn-block" type="submit" data-submit>Send my request</button>
+            <button class="btn-back" type="button" data-back>← Back</button>
+          </div>
+
+        </div>
+
+        <!-- success -->
+        <div class="form-done" id="form-done" hidden>
+          <div class="big">✓</div>
+          <h3>Thank you — we have your request</h3>
+          <p>A Young Master Challenge coordinator will message you on <strong>WhatsApp</strong> with the round
+             dates, the syllabus and the entry process for your school.</p>
+        </div>
+      </form>
+
+      <!-- The country picker lives OUTSIDE <form> on purpose: site.js binds to every
+           input inside the form, so a search box in there would fire its validation
+           and submit the form on Enter. -->
+      <div class="cc-pop" id="g-cc-pop" hidden>
+        <div class="cc-search-wrap">
+          <input type="text" class="cc-search" id="g-cc-search" placeholder="Search country or code" autocomplete="off" spellcheck="false" aria-label="Search for a country" aria-controls="g-cc-list" aria-autocomplete="list">
+        </div>
+        <ul class="cc-list" id="g-cc-list" role="listbox" aria-label="Countries"></ul>
+        <p class="cc-empty" id="g-cc-empty" hidden>No country matches that search.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ STAT STRIP ============ -->
+<section class="stat-strip">
+  <div class="wrap">
+    <div><b>4,500+</b><span>Participants in the online round</span></div>
+    <div><b>30+</b><span>Countries represented</span></div>
+    <div><b>3</b><span>Age categories</span></div>
+    <div><b>2</b><span>Subjects: English and Maths</span></div>
+  </div>
+</section>
+
+<!-- ============ WHY SCHOOLS ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">For schools and teachers</p>
+      <h2>Why schools enter their students</h2>
+      <p>An international competition that runs inside your own school, with none of the complication falling on you.</p>
+    </div>
+
+    <div class="cards c3 reveal">
+      <div class="card">
+        <div class="ic">🏫</div>
+        <h3>International standing</h3>
+        <p>Your school takes part in an international English and Maths competition alongside institutions from more than 30 countries.</p>
+      </div>
+      <div class="card">
+        <div class="ic">💻</div>
+        <h3>No logistics</h3>
+        <p>The round is sat online from your own computer room. All you need is devices with an internet connection on the official date.</p>
+      </div>
+      <div class="card">
+        <div class="ic">📜</div>
+        <h3>A certificate for every student</h3>
+        <p>Every participant receives a certificate. The highest scorers earn Gold Master, Silver Master or Bronze Master recognition.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🚀</div>
+        <h3>Real motivation</h3>
+        <p>Your students revise for something with a name, a date and an international stage. Preparing for it becomes a shared goal for the group.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🌍</div>
+        <h3>The road to London</h3>
+        <p>Those who stand out advance to the regional finals and to the Grand World Final in London, alongside young people from around the world.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🎓</div>
+        <h3>Prizes and discounts</h3>
+        <p>The competition awards prizes and discounts on the World Final package, plus certificates and medals, to the highest-performing students.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section tint">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">How it works</p>
+      <h2>Five steps, from your classroom to London</h2>
+      <p>You enter the group. We provide the syllabus, the platform and a coordinator alongside you.</p>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Registration</h3>
+        <p>You enter your school and your students in their age category and subject.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>Preparation</h3>
+        <p>You receive the official resources and syllabus for English or Maths for each category.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>Online round</h3>
+        <p>Your students sit the paper online from school, on the official round date. <strong>30 questions in 60 minutes</strong>, across three difficulty levels, on a laptop, tablet or phone.</p>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <h3>Results</h3>
+        <p>Each student receives their international certificate according to the score they achieved.</p>
+      </div>
+      <div class="step">
+        <div class="n">5</div>
+        <h3>Grand Final</h3>
+        <p>The highest scorers advance to the regional final and to the Grand World Final in London.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Categories</p>
+      <h2>Three categories, ages 9 to 17</h2>
+      <p>Each category has its own syllabus and difficulty level, in both English and Maths.</p>
+    </div>
+
+    <div class="cats reveal">
+      <div class="cat">
+        <div class="hex">🐝</div>
+        <h3>Little Bee</h3>
+        <p class="age">Ages 9 to 11</p>
+        <p>Upper primary. Content pitched to the age group, focused on comprehension and reasoning.</p>
+      </div>
+      <div class="cat">
+        <div class="hex deep">🐝</div>
+        <h3>Honeybee</h3>
+        <p class="age">Ages 12 to 14</p>
+        <p>Lower secondary. More demanding on vocabulary, grammar and mathematical problem solving.</p>
+      </div>
+      <div class="cat">
+        <div class="hex ink">🐝</div>
+        <h3>Bumblebee</h3>
+        <p class="age">Ages 15 to 17</p>
+        <p>Upper secondary. The highest level of the competition, and the shortest route to the World Final prizes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALENDAR ============ -->
+<section class="section tint mx-calendar" id="dates" aria-labelledby="calendar-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">2026 – 2027 calendar</p>
+      <h2>The dates are already confirmed</h2>
+      <p>Your school picks the round that best fits your own calendar. You can take part in one round or in several.</p>
+    </div>
+
+    <div class="mx-calendar-grid">
+      <div class="table-wrap reveal">
+        <table class="mx-calendar-table" aria-label="Online round dates 2026 – 2027">
+          <thead>
+            <tr><th scope="col">Online round</th><th scope="col">Exam date</th></tr>
+          </thead>
+          <tbody>
+            <tr class="mx-calendar-next"><th scope="row">October round <span class="mx-calendar-badge">Next</span></th><td>23 &amp; 24 October 2026</td></tr>
+            <tr><th scope="row">November round</th><td>20 &amp; 21 November 2026</td></tr>
+            <tr><th scope="row">December round</th><td>18 &amp; 19 December 2026</td></tr>
+            <tr><th scope="row">January round</th><td>22 &amp; 23 January 2027</td></tr>
+            <tr><th scope="row">February round</th><td>12 &amp; 13 February 2027</td></tr>
+            <tr><th scope="row">March round</th><td>5 &amp; 6 March 2027</td></tr>
+            <tr><th scope="row">April round</th><td>16 &amp; 17 April 2027</td></tr>
+            <tr><th scope="row">Local rounds</th><td>September to January</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="mx-calendar-path reveal" aria-labelledby="calendar-path-title">
+        <h3 id="calendar-path-title">The road to London</h3>
+        <p>From the classroom to the world stage.</p>
+        <ol class="mx-calendar-timeline">
+          <li>
+            <h4>1 · Online round</h4>
+            <p>In your own school, on the date you choose</p>
+          </li>
+          <li>
+            <h4>2 · Regional finals</h4>
+            <p>Dubai · 16 to 21 March 2027<br>Istanbul · 23 to 28 March 2027</p>
+          </li>
+          <li>
+            <h4>3 · Grand World Final · London</h4>
+            <p>31 July to 6 August 2027</p>
+          </li>
+        </ol>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIZES ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Online round prizes</p>
+      <h2>First place travels to London free</h2>
+      <p>Prizes are decided on the best score achieved across the rounds from
+         <strong>October to January</strong>. That is why it pays to enter the group from the first round.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table>
+        <thead>
+          <tr><th scope="col">Result</th><th scope="col">Grand World Final prize</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="medal"><span class="dot gold"></span>1st place — best score, October to January</td><td><strong>Full London package, free of charge</strong></td></tr>
+          <tr><td class="medal"><span class="dot silver"></span>2nd place — second highest score</td><td>50% off the package</td></tr>
+          <tr><td class="medal"><span class="dot bronze"></span>3rd place — third highest score</td><td>25% off the package</td></tr>
+          <tr><td class="medal"><span class="dot hm"></span>Gold certificate</td><td>10% off the package</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:14.5px;color:var(--muted);margin-top:16px;text-align:center;max-width:720px;margin-left:auto;margin-right:auto">
+      Every participant receives their <strong>international certificate</strong>, whatever score they achieve.
+    </p>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section tint">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">The competition in pictures</p>
+      <h2>A look at the Young Master Challenge</h2>
+      <p>Local rounds, regional finals and the Grand World Final in London.</p>
+    </div>
+
+    <div class="gallery reveal">
+      <figure><img src="/lp/assets/img/mascot-group.webp" alt="Young Master Challenge students with the official mascot" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/lp/assets/img/auditorium.webp" alt="A full auditorium of participants at the final" loading="lazy" width="1200" height="675"></figure>
+      <figure><img src="/lp/assets/img/exam-desk.webp" alt="A student sitting the competition paper" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/lp/assets/img/winners.webp" alt="Young Master Challenge winners with their trophy" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/lp/assets/img/certificates.webp" alt="Participants celebrating with their certificates" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/lp/assets/img/photo-frame.webp" alt="Participants in the event photo area" loading="lazy" width="1000" height="562"></figure>
+      <figure><img src="/lp/assets/img/corridor.webp" alt="Participants during the competition day" loading="lazy" width="1200" height="675"></figure>
+      <figure><img src="/lp/assets/img/lecture.webp" alt="The Young Master Challenge ceremony" loading="lazy" width="1000" height="562"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LONDON FINAL ============ -->
+<section class="section dark honeycomb">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="kicker">Grand World Final</p>
+      <h2>The final stage is in London</h2>
+      <p>
+        Each year the highest-performing young people from around the world gather in London for the
+        Grand Final of the Young Master Challenge. For many students it is their first international
+        trip — and the moment they discover what they are capable of.
+      </p>
+      <ul>
+        <li><span class="tick">✓</span> <span>Final paper sat in person at the official venue</span></li>
+        <li><span class="tick">✓</span> <span>Awards ceremony with medals and certificates</span></li>
+        <li><span class="tick">✓</span> <span>Cultural and social programme in London</span></li>
+        <li><span class="tick">✓</span> <span>Time alongside students from more than 30 countries</span></li>
+      </ul>
+      <p style="margin-top:26px">
+        <a class="btn btn-primary" href="#form-card" data-cta="london">Request your school's information</a>
+      </p>
+    </div>
+    <div class="reveal">
+      <img src="/lp/assets/img/london-final.webp" alt="Participants beside the Grand World Final sign in London" loading="lazy" width="1000" height="563">
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Testimonials</p>
+      <h2>What participants say</h2>
+    </div>
+
+    <div class="quotes reveal">
+      <div class="quote">
+        <div class="mark">"</div>
+        <p>Taking part in the Young Master Challenge has been one of the most rewarding experiences of my academic life.
+           At first I was nervous about competing with students from other countries, but the challenge led me to discover
+           strengths I did not know I had.</p>
+        <div class="who">— Madi, participant</div>
+      </div>
+      <div class="quote">
+        <div class="mark">"</div>
+        <p>Taking part in the Young Master Challenge gave me more confidence and made learning exciting.
+           I really enjoyed meeting other students and exploring new ideas.</p>
+        <div class="who">— Amara, participant</div>
+      </div>
+      <div class="quote">
+        <div class="mark">"</div>
+        <p>The Young Master Challenge is fun and inspiring at the same time. It makes learning exciting and sparks
+           curiosity; it let me explore new ideas and experiences.</p>
+        <div class="who">— Georgiana, participant</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Frequently asked questions</p>
+      <h2>What teachers ask</h2>
+    </div>
+
+    <div class="faq reveal">
+      <details open>
+        <summary>Which subjects can my group enter?</summary>
+        <p>English and Maths. You can enter your students in one subject or in both, in the category that matches their age.</p>
+      </details>
+      <details>
+        <summary>Where is the online round sat?</summary>
+        <p>In your own school, on the official round date. All you need is computers or tablets with an internet connection. No student has to travel to a venue.</p>
+      </details>
+      <details>
+        <summary>Which countries can take part?</summary>
+        <p>Schools anywhere in the world can enter. Students from more than 30 countries already take part, and the online round is sat in your own school wherever you are.</p>
+      </details>
+      <details>
+        <summary>How many students can I enter?</summary>
+        <p>There is no minimum. You can enter one group, a whole year or the entire school. Tell us the approximate number on the form and a coordinator will talk it through with you.</p>
+      </details>
+      <details>
+        <summary>What does it cost to take part?</summary>
+        <p>There is no cost to request the information or to register your school. The entry fee per student depends on the round and the category; a coordinator shares the full detail by WhatsApp before you make any decision.</p>
+      </details>
+      <details>
+        <summary>Is travelling to London compulsory?</summary>
+        <p>No. The online round and the international certificate are entirely independent of the trip. Attending the Grand World Final is optional and only for students who qualify.</p>
+      </details>
+      <details>
+        <summary>When is the next round?</summary>
+        <p>The next online round is on 23 and 24 October 2026, and the full calendar above runs through to April 2027. Leave your details and a coordinator will send the official calendar and syllabus by WhatsApp.</p>
+      </details>
+      <details>
+        <summary>What do I get as a teacher?</summary>
+        <p>Recognition of your school as a participating institution, the official preparation materials, and a coordinator alongside you throughout the process.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta-final">
+  <div class="wrap">
+    <h2>Enter your school in the Young Master Challenge</h2>
+    <p>Leave your details and a coordinator will contact you on WhatsApp with the dates, the syllabus and the full entry process.</p>
+    <a class="btn btn-primary btn-lg" href="#form-card" data-cta="final">Request the information 🐝</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <img src="/lp/assets/img/logo-light.png" alt="Young Master Challenge" width="900" height="247">
+      <p>An international English and Maths competition for students aged 9 to 17, with online, local and regional rounds, and a Grand World Final in London.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>16-17 Grand Arcade, London, N12 0EH</li>
+        <li><a href="https://wa.me/447393909302">WhatsApp: +44 7393 909302</a></li>
+        <li><a href="mailto:info@youngmaster.org">info@youngmaster.org</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <ul>
+        <li><a href="https://www.youngmaster.org/" target="_blank" rel="noopener">Official site</a></li>
+        <li><a href="https://www.youngmaster.org/privacy-notice/" target="_blank" rel="noopener">Privacy notice</a></li>
+        <li><a href="/lp/mx">Versión en español (México)</a></li>
+        <li><a href="/lp/br">Versão em português (Brasil)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© Young Master Challenge. All rights reserved.</span>
+    <span>Official registration page — international</span>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a class="btn btn-primary btn-block" href="#form-card" data-cta="sticky">Enter my school 🐝</a>
+</div>
+
+<a class="wa" href="https://wa.me/447393909302?text=Hello%2C%20I%20would%20like%20information%20about%20the%20Young%20Master%20Challenge%20for%20my%20school" target="_blank" rel="noopener" aria-label="Message us on WhatsApp">
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+</a>
+
+<script>
+window.YM_I18N = {
+  required: "This field is required",
+  email: "Please enter a valid email address",
+  phone: "Please enter a valid WhatsApp number",
+  recaptchaError: "We could not verify your request. Please refresh the page and try again.",
+  submitError: "We could not save your request. Please try again.",
+  sending: "Sending…"
+};
+</script>
+
+<!-- ===================================================================
+     COUNTRY CALLING CODE PICKER
+     Runs before site.js (which is deferred), so its submit listener is
+     registered first and the dial code is prepended before site.js reads
+     the form. Nothing here touches site.js or site.css.
+     =================================================================== -->
+<script>
+(function () {
+  "use strict";
+
+  /* [ISO2, name, dial, asciiAlias] — dial codes from the countries-list dataset. */
+  var DATA = [["AF","Afghanistan","93"],["AX","Aland","358"],["AL","Albania","355"],["DZ","Algeria","213"],["AS","American Samoa","1684"],["AD","Andorra","376"],["AO","Angola","244"],["AI","Anguilla","1264"],["AG","Antigua and Barbuda","1268"],["AR","Argentina","54"],["AM","Armenia","374"],["AW","Aruba","297"],["AU","Australia","61"],["AT","Austria","43"],["AZ","Azerbaijan","994"],["BS","Bahamas","1242"],["BH","Bahrain","973"],["BD","Bangladesh","880"],["BB","Barbados","1246"],["BY","Belarus","375"],["BE","Belgium","32"],["BZ","Belize","501"],["BJ","Benin","229"],["BM","Bermuda","1441"],["BT","Bhutan","975"],["BO","Bolivia","591"],["BQ","Bonaire","5997"],["BA","Bosnia and Herzegovina","387"],["BW","Botswana","267"],["BV","Bouvet Island","47"],["BR","Brazil","55"],["IO","British Indian Ocean Territory","246"],["VG","British Virgin Islands","1284"],["BN","Brunei","673"],["BG","Bulgaria","359"],["BF","Burkina Faso","226"],["BI","Burundi","257"],["KH","Cambodia","855"],["CM","Cameroon","237"],["CA","Canada","1"],["CV","Cape Verde","238"],["KY","Cayman Islands","1345"],["CF","Central African Republic","236"],["TD","Chad","235"],["CL","Chile","56"],["CN","China","86"],["CX","Christmas Island","61"],["CC","Cocos (Keeling) Islands","61","cocos keeling islands"],["CO","Colombia","57"],["KM","Comoros","269"],["CK","Cook Islands","682"],["CR","Costa Rica","506"],["HR","Croatia","385"],["CU","Cuba","53"],["CW","Curacao","5999"],["CY","Cyprus","357"],["CZ","Czech Republic","420"],["CD","Democratic Republic of the Congo","243"],["DK","Denmark","45"],["DJ","Djibouti","253"],["DM","Dominica","1767"],["DO","Dominican Republic","1809"],["TL","East Timor","670"],["EC","Ecuador","593"],["EG","Egypt","20"],["SV","El Salvador","503"],["GQ","Equatorial Guinea","240"],["ER","Eritrea","291"],["EE","Estonia","372"],["SZ","Eswatini","268"],["ET","Ethiopia","251"],["FK","Falkland Islands","500"],["FO","Faroe Islands","298"],["FJ","Fiji","679"],["FI","Finland","358"],["FR","France","33"],["GF","French Guiana","594"],["PF","French Polynesia","689"],["TF","French Southern Territories","262"],["GA","Gabon","241"],["GM","Gambia","220"],["GE","Georgia","995"],["DE","Germany","49"],["GH","Ghana","233"],["GI","Gibraltar","350"],["GR","Greece","30"],["GL","Greenland","299"],["GD","Grenada","1473"],["GP","Guadeloupe","590"],["GU","Guam","1671"],["GT","Guatemala","502"],["GG","Guernsey","44"],["GN","Guinea","224"],["GW","Guinea-Bissau","245","guinea bissau"],["GY","Guyana","592"],["HT","Haiti","509"],["HM","Heard Island and McDonald Islands","61"],["HN","Honduras","504"],["HK","Hong Kong","852"],["HU","Hungary","36"],["IS","Iceland","354"],["IN","India","91"],["ID","Indonesia","62"],["IR","Iran","98"],["IQ","Iraq","964"],["IE","Ireland","353"],["IM","Isle of Man","44"],["IL","Israel","972"],["IT","Italy","39"],["CI","Ivory Coast","225"],["JM","Jamaica","1876"],["JP","Japan","81"],["JE","Jersey","44"],["JO","Jordan","962"],["KZ","Kazakhstan","7"],["KE","Kenya","254"],["KI","Kiribati","686"],["XK","Kosovo","383"],["KW","Kuwait","965"],["KG","Kyrgyzstan","996"],["LA","Laos","856"],["LV","Latvia","371"],["LB","Lebanon","961"],["LS","Lesotho","266"],["LR","Liberia","231"],["LY","Libya","218"],["LI","Liechtenstein","423"],["LT","Lithuania","370"],["LU","Luxembourg","352"],["MO","Macao","853"],["MG","Madagascar","261"],["MW","Malawi","265"],["MY","Malaysia","60"],["MV","Maldives","960"],["ML","Mali","223"],["MT","Malta","356"],["MH","Marshall Islands","692"],["MQ","Martinique","596"],["MR","Mauritania","222"],["MU","Mauritius","230"],["YT","Mayotte","262"],["MX","Mexico","52"],["FM","Micronesia","691"],["MD","Moldova","373"],["MC","Monaco","377"],["MN","Mongolia","976"],["ME","Montenegro","382"],["MS","Montserrat","1664"],["MA","Morocco","212"],["MZ","Mozambique","258"],["MM","Myanmar (Burma)","95","myanmar burma"],["NA","Namibia","264"],["NR","Nauru","674"],["NP","Nepal","977"],["NL","Netherlands","31"],["NC","New Caledonia","687"],["NZ","New Zealand","64"],["NI","Nicaragua","505"],["NE","Niger","227"],["NG","Nigeria","234"],["NU","Niue","683"],["NF","Norfolk Island","672"],["KP","North Korea","850"],["MK","North Macedonia","389"],["MP","Northern Mariana Islands","1670"],["NO","Norway","47"],["OM","Oman","968"],["PK","Pakistan","92"],["PW","Palau","680"],["PS","Palestine","970"],["PA","Panama","507"],["PG","Papua New Guinea","675"],["PY","Paraguay","595"],["PE","Peru","51"],["PH","Philippines","63"],["PN","Pitcairn Islands","64"],["PL","Poland","48"],["PT","Portugal","351"],["PR","Puerto Rico","1787"],["QA","Qatar","974"],["CG","Republic of the Congo","242"],["RE","Reunion","262"],["RO","Romania","40"],["RU","Russia","7"],["RW","Rwanda","250"],["BL","Saint Barthelemy","590"],["SH","Saint Helena","290"],["KN","Saint Kitts and Nevis","1869"],["LC","Saint Lucia","1758"],["MF","Saint Martin","590"],["PM","Saint Pierre and Miquelon","508"],["VC","Saint Vincent and the Grenadines","1784"],["WS","Samoa","685"],["SM","San Marino","378"],["ST","Sao Tome and Principe","239"],["SA","Saudi Arabia","966"],["SN","Senegal","221"],["RS","Serbia","381"],["SC","Seychelles","248"],["SL","Sierra Leone","232"],["SG","Singapore","65"],["SX","Sint Maarten","1721"],["SK","Slovakia","421"],["SI","Slovenia","386"],["SB","Solomon Islands","677"],["SO","Somalia","252"],["ZA","South Africa","27"],["GS","South Georgia and the South Sandwich Islands","500"],["KR","South Korea","82"],["SS","South Sudan","211"],["ES","Spain","34"],["LK","Sri Lanka","94"],["SD","Sudan","249"],["SR","Suriname","597"],["SJ","Svalbard and Jan Mayen","4779"],["SE","Sweden","46"],["CH","Switzerland","41"],["SY","Syria","963"],["TW","Taiwan","886"],["TJ","Tajikistan","992"],["TZ","Tanzania","255"],["TH","Thailand","66"],["TG","Togo","228"],["TK","Tokelau","690"],["TO","Tonga","676"],["TT","Trinidad and Tobago","1868"],["TN","Tunisia","216"],["TR","Turkey","90"],["TM","Turkmenistan","993"],["TC","Turks and Caicos Islands","1649"],["TV","Tuvalu","688"],["UM","U.S. Minor Outlying Islands","1","u s minor outlying islands"],["VI","U.S. Virgin Islands","1340","u s virgin islands"],["UG","Uganda","256"],["UA","Ukraine","380"],["AE","United Arab Emirates","971"],["GB","United Kingdom","44"],["US","United States","1"],["UY","Uruguay","598"],["UZ","Uzbekistan","998"],["VU","Vanuatu","678"],["VA","Vatican City","379"],["VE","Venezuela","58"],["VN","Vietnam","84"],["WF","Wallis and Futuna","681"],["EH","Western Sahara","212"],["YE","Yemen","967"],["ZM","Zambia","260"],["ZW","Zimbabwe","263"]];
+
+  var btn    = document.getElementById('g-cc');
+  var pop    = document.getElementById('g-cc-pop');
+  var search = document.getElementById('g-cc-search');
+  var list   = document.getElementById('g-cc-list');
+  var empty  = document.getElementById('g-cc-empty');
+  var flagEl = document.getElementById('g-cc-flag');
+  var dialEl = document.getElementById('g-cc-dial');
+  var hidden = document.getElementById('g-country');
+  var phone  = document.getElementById('g-phone');
+  var form   = document.getElementById('lead-form');
+  if (!btn || !pop || !form) return;
+
+  var current = null;      // the selected DATA row
+  var shown = [];          // rows currently rendered
+  var active = -1;         // highlighted index within `shown`
+
+  function flagOf(iso) {
+    return String.fromCodePoint(
+      0x1F1E6 + iso.charCodeAt(0) - 65,
+      0x1F1E6 + iso.charCodeAt(1) - 65
+    );
+  }
+
+  function select(row) {
+    current = row;
+    flagEl.textContent = flagOf(row[0]);
+    dialEl.textContent = '+' + row[2];
+    hidden.value = row[1];
+    btn.setAttribute('aria-label', 'Country calling code. Selected: ' + row[1] + ', plus ' + row[2]);
+  }
+
+  function render(q) {
+    q = (q || '').trim().toLowerCase();
+    var digits = q.replace(/[^0-9]/g, '');
+    shown = DATA.filter(function (r) {
+      if (!q) return true;
+      if (r[1].toLowerCase().indexOf(q) === 0) return true;          // name starts with
+      if (r[1].toLowerCase().indexOf(q) > -1) return true;           // name contains
+      if (r[3] && r[3].indexOf(q) > -1) return true;                 // ascii-folded alias
+      if (digits && r[2].indexOf(digits) === 0) return true;         // dial code
+      if (q.length === 2 && r[0].toLowerCase() === q) return true;   // ISO code
+      return false;
+    });
+
+    list.innerHTML = '';
+    empty.hidden = shown.length > 0;
+    var frag = document.createDocumentFragment();
+    shown.forEach(function (r, i) {
+      var li = document.createElement('li');
+      li.id = 'g-cc-opt-' + i;
+      li.setAttribute('role', 'option');
+      li.setAttribute('aria-selected', current && r[0] === current[0] ? 'true' : 'false');
+      li.innerHTML = '<span class="f"></span><span class="n"></span><span class="d"></span>';
+      li.children[0].textContent = flagOf(r[0]);
+      li.children[1].textContent = r[1];
+      li.children[2].textContent = '+' + r[2];
+      li.addEventListener('mousedown', function (e) { e.preventDefault(); choose(i); });
+      frag.appendChild(li);
+    });
+    list.appendChild(frag);
+
+    active = -1;
+    for (var i = 0; i < shown.length; i++) {
+      if (current && shown[i][0] === current[0]) { active = i; break; }
+    }
+    if (active < 0 && shown.length) active = 0;
+    paint(false);
+  }
+
+  function paint(scroll) {
+    var items = list.children;
+    for (var i = 0; i < items.length; i++) items[i].classList.toggle('on', i === active);
+    if (active > -1 && items[active]) {
+      list.setAttribute('aria-activedescendant', items[active].id);
+      if (scroll) {
+        var el = items[active], top = el.offsetTop, bot = top + el.offsetHeight;
+        if (top < list.scrollTop) list.scrollTop = top;
+        else if (bot > list.scrollTop + list.clientHeight) list.scrollTop = bot - list.clientHeight;
+      }
+    } else {
+      list.removeAttribute('aria-activedescendant');
+    }
+  }
+
+  function choose(i) {
+    if (shown[i]) { select(shown[i]); close(); phone.focus(); }
+  }
+
+  function place() {
+    var r = btn.getBoundingClientRect();
+    var w = pop.offsetWidth;
+    var left = Math.min(Math.max(12, r.left), window.innerWidth - w - 12);
+    var below = window.innerHeight - r.bottom;
+    pop.style.left = left + 'px';
+    if (below < pop.offsetHeight + 16 && r.top > below) {
+      pop.style.top = Math.max(12, r.top - pop.offsetHeight - 6) + 'px';
+    } else {
+      pop.style.top = (r.bottom + 6) + 'px';
+    }
+  }
+
+  var open = false;
+  function openPop() {
+    if (open) return;
+    open = true;
+    pop.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    search.value = '';
+    render('');
+    place();
+    search.focus();
+    window.addEventListener('scroll', place, true);
+    window.addEventListener('resize', place);
+  }
+  function close() {
+    if (!open) return;
+    open = false;
+    pop.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+    window.removeEventListener('scroll', place, true);
+    window.removeEventListener('resize', place);
+  }
+
+  btn.addEventListener('click', function () { open ? close() : openPop(); });
+  btn.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowDown' || e.key === 'Down') { e.preventDefault(); openPop(); }
+  });
+
+  search.addEventListener('input', function () { render(search.value); });
+  search.addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (k === 'Enter') { e.preventDefault(); e.stopPropagation(); choose(active); return; }
+    if (k === 'Escape' || k === 'Esc') { e.preventDefault(); close(); btn.focus(); return; }
+    if (k === 'ArrowDown' || k === 'Down') { e.preventDefault(); if (shown.length) { active = (active + 1) % shown.length; paint(true); } return; }
+    if (k === 'ArrowUp' || k === 'Up') { e.preventDefault(); if (shown.length) { active = (active - 1 + shown.length) % shown.length; paint(true); } return; }
+    if (k === 'Home') { e.preventDefault(); active = 0; paint(true); return; }
+    if (k === 'End') { e.preventDefault(); active = shown.length - 1; paint(true); return; }
+  });
+
+  document.addEventListener('mousedown', function (e) {
+    if (open && !pop.contains(e.target) && !btn.contains(e.target)) close();
+  });
+  document.addEventListener('focusin', function (e) {
+    if (open && !pop.contains(e.target) && !btn.contains(e.target)) close();
+  });
+
+  /* ---- initial country ---- */
+  var byIso = {};
+  DATA.forEach(function (r) { byIso[r[0]] = r; });
+
+  var TZ = {
+    'Asia/Dubai': 'AE', 'Asia/Riyadh': 'SA', 'Asia/Qatar': 'QA', 'Asia/Kuwait': 'KW',
+    'Asia/Bahrain': 'BH', 'Asia/Muscat': 'OM', 'Asia/Istanbul': 'TR', 'Europe/Istanbul': 'TR',
+    'America/Mexico_City': 'MX', 'America/Monterrey': 'MX', 'America/Cancun': 'MX',
+    'America/Sao_Paulo': 'BR', 'America/Bahia': 'BR', 'America/Fortaleza': 'BR',
+    'Europe/London': 'GB', 'Europe/Madrid': 'ES', 'Europe/Paris': 'FR', 'Europe/Berlin': 'DE',
+    'Asia/Karachi': 'PK', 'Asia/Kolkata': 'IN', 'Asia/Calcutta': 'IN', 'Africa/Cairo': 'EG',
+    'Africa/Lagos': 'NG', 'Asia/Jakarta': 'ID', 'Asia/Manila': 'PH', 'Asia/Kuala_Lumpur': 'MY'
+  };
+
+  function detect() {
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (tz && TZ[tz] && byIso[TZ[tz]]) return byIso[TZ[tz]];
+    } catch (e) {}
+    try {
+      var langs = navigator.languages || [navigator.language || ''];
+      for (var i = 0; i < langs.length; i++) {
+        var m = /[-_]([A-Za-z]{2})(?:$|[-_])/.exec(langs[i]);
+        if (m && byIso[m[1].toUpperCase()]) return byIso[m[1].toUpperCase()];
+      }
+      if (window.Intl && Intl.Locale) {
+        for (var j = 0; j < langs.length; j++) {
+          var reg = new Intl.Locale(langs[j]).maximize().region;
+          if (reg && byIso[reg]) return byIso[reg];
+        }
+      }
+    } catch (e) {}
+    return byIso.GB;
+  }
+
+  select(detect() || byIso.GB);
+
+  /* ---- prepend the dial code before site.js reads the form ----
+     This listener is registered first because site.js is deferred.
+     If the visitor typed their own "+", we leave their value alone. */
+  form.addEventListener('submit', function () {
+    var v = (phone.value || '').trim();
+    if (!v || v.charAt(0) === '+') return;
+    if (!/\d/.test(v)) return;
+    phone.value = '+' + current[2] + ' ' + v;
+  });
+})();
+</script>
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LdognctAAAAALEtPb6OBdb1SQTpcvaTKAgoO8LS" defer></script>
+<script src="/lp/assets/js/site.js?v=recaptcha1" defer></script>
+</body>
+</html>
