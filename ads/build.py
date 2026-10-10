@@ -28,6 +28,19 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 # Ad photos are kept separately from the site images at full resolution: the site
 # images are compressed hard for load speed, which is wrong for a 1080px creative.
+RTL_CSS = """
+/* ---------- Arabic (RTL) ---------- */
+[dir="rtl"] { font-family: "Cairo", system-ui, sans-serif; direction: rtl; text-align: right; }
+[dir="rtl"] h1 { letter-spacing: 0; line-height: 1.16; font-weight: 900; }
+[dir="rtl"] .badge { letter-spacing: 0; text-transform: none; font-weight: 700; padding: 12px 26px; }
+[dir="rtl"] .sub { max-width: 26ch; line-height: 1.5; font-weight: 500; }
+[dir="rtl"] .proof { font-weight: 700; }
+[dir="rtl"].v-a h1 { font-size: 80px; }
+[dir="rtl"].v-b h1 { font-size: 70px; }
+[dir="rtl"].v-c h1 { font-size: 74px; }
+[dir="rtl"] .v-a .body, [dir="rtl"] .v-c .body { text-align: right; }
+"""
+
 PHOTOS = {k: k + ".jpg" for k in
           ("group", "mascot", "auditorium", "winners", "exam", "london", "certificates", "corridor")}
 
@@ -58,6 +71,7 @@ def body_block(c):
 
 def card_html(c, photo, logo):
     v = c.get("variant", "a")
+    rtl = ' dir="rtl" lang="ar"' if c.get("lang") == "ar" else ""
     top = f"""<div class="topbar"><img src="{logo}" alt=""><span class="rule"></span></div>"""
     if v == "b":
         inner = f"""
@@ -79,7 +93,7 @@ def card_html(c, photo, logo):
           {top}
           <div class="body">{body_block(c)}</div>
         """
-    return f'<div class="card v-{v}">{inner}<div class="accent"></div></div>'
+    return f'<div class="card v-{v}"{rtl}>{inner}<div class="accent"></div></div>'
 
 
 def main():
@@ -93,7 +107,11 @@ def main():
 
     template = open(os.path.join(ROOT, "template.html"), encoding="utf-8").read()
     fonts = open(os.path.join(ROOT, "_fonts.css"), encoding="utf-8").read()
+    ar_path = os.path.join(ROOT, "_fonts-ar.css")
+    if os.path.exists(ar_path):
+        fonts += "\n" + open(ar_path, encoding="utf-8").read()
     template = template.replace('@import url("_fonts.css");', fonts)
+    template = template.replace("</style>", RTL_CSS + "</style>", 1)
     logo = data_uri(os.path.join(REPO, "assets", "img", "logo-light.png"))
 
     os.makedirs(OUT, exist_ok=True)
